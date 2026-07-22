@@ -11,7 +11,7 @@ const pillars = [
     icon: Globe2,
     title: 'Alcance regional',
     description:
-      'Construimos redes de cooperación horizontal entre pares e instituciones con raíces regionales, con presencia en 23 países a través de nuestra alianza con la OEI.',
+      'Construimos redes de cooperación horizontal entre pares e instituciones con raíces regionales.',
   },
   {
     icon: Lightbulb,
@@ -59,7 +59,6 @@ export function AboutSection() {
             </div>
           </div>
         </div>
-
         {/* Pillars grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {pillars.map((pillar) => {
@@ -80,29 +79,18 @@ export function AboutSection() {
             )
           })}
         </div>
-
         {/* Alliances teaser */}
-        <div className="mt-16 p-8 rounded-xl bg-[oklch(0.22_0.05_255)] flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="mt-16 p-8 rounded-xl bg-[#00143f] flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
             <p className="text-xs font-semibold text-[oklch(0.82_0.1_175)] uppercase tracking-widest mb-2">
-              Alianzas internacionales
+              Alianzas institucionales
             </p>
             <h3 className="text-xl font-bold text-white">
-              Respaldados por la OEI y la UTN Córdoba
+              Construyendo cooperación institucional
             </h3>
             <p className="text-white/60 text-sm mt-2">
-              Acuerdos de cooperación firmados en el lanzamiento institucional, 23 de abril de 2026.
+              Próximamente compartiremos las alianzas estratégicas de SurLab.
             </p>
-          </div>
-          <div className="flex items-center gap-6 shrink-0">
-            {['OEI', 'UTN'].map((ally) => (
-              <div
-                key={ally}
-                className="w-20 h-20 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center"
-              >
-                <span className="text-white font-bold text-lg">{ally}</span>
-              </div>
-            ))}
           </div>
         </div>
       </div>

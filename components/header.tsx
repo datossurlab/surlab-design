@@ -52,9 +52,9 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <img src="/surlab-icon.png" alt="SurLab" className="w-8 h-8" />
+            <img src="/surlab-icon.png" alt="SURLAB" className="w-8 h-8" />
             <span className="text-white font-semibold text-lg tracking-tight">
-              SurLab
+              SURLAB
             </span>
           </Link>
           {/* Desktop nav */}

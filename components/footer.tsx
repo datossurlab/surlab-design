@@ -10,9 +10,9 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/surlab-icon.png" alt="SurLab" className="w-8 h-8" />
+              <img src="/surlab-icon.png" alt="SURLAB" className="w-8 h-8" />
               <span className="text-white font-semibold text-lg">
-                SurLab
+                SURLAB
               </span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
@@ -39,7 +39,7 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5">
               {[
                 { label: 'Inicio', href: '#' },
-                { label: 'Sobre SurLab', href: '#nosotros' },
+                { label: 'Sobre SURLAB', href: '#nosotros' },
                 { label: 'Programas', href: '#programas' },
                 { label: 'Ejes temáticos', href: '#ejes' },
                 { label: 'Contacto', href: '#contacto' },
@@ -79,8 +79,6 @@ export function Footer() {
                 <span className="text-sm text-white/60">
                   Tenerife 4304 - Barrio Parque Horizonte
                   <br />
-                  Parque Horizonte
-                  <br />
                   5016 - Córdoba
                 </span>
               </li>
@@ -98,7 +96,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-white/40">
-            © 2026 SurLab — Laboratorio de Innovación Política. Todos los derechos reservados.
+            © 2026 SURLAB — Laboratorio de Innovación Política. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacidad</Link>

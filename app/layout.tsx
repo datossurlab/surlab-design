@@ -9,12 +9,12 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'SurLab — Laboratorio de Innovación Política',
+  title: 'SURLAB — Laboratorio de Innovación Política',
   description:
-    'SurLab es una fundación dedicada a la generación de conocimiento estratégico e innovación pública para el desarrollo de América Latina desde el Sur Global.',
+    'SURLAB es una fundación dedicada a la generación de conocimiento estratégico e innovación pública para el desarrollo de América Latina desde el Sur Global.',
   keywords: ['think tank', 'innovación política', 'políticas públicas', 'Córdoba', 'América Latina', 'Sur Global'],
   openGraph: {
-    title: 'SurLab — Laboratorio de Innovación Política',
+    title: 'SURLAB — Laboratorio de Innovación Política',
     description:
       'Articulamos conocimiento estratégico e innovación pública para el desarrollo inclusivo de América Latina.',
     locale: 'es_AR',

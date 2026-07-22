@@ -3,18 +3,16 @@ import { Mail, MapPin, Globe, ExternalLink, Share2, Rss } from 'lucide-react'
 
 export function Footer() {
   return (
-    <footer className="bg-[oklch(0.22_0.05_255)] text-white">
+    <footer className="bg-[#00143f] text-white">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-sm bg-[oklch(0.82_0.1_175)] flex items-center justify-center">
-                <span className="text-[oklch(0.15_0.04_255)] font-bold text-sm">SL</span>
-              </div>
+              <img src="/surlab-icon.png" alt="SurLab" className="w-8 h-8" />
               <span className="text-white font-semibold text-lg">
-                Sur<span className="text-[oklch(0.82_0.1_175)]">Lab</span>
+                SurLab
               </span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
@@ -35,7 +33,6 @@ export function Footer() {
               </a>
             </div>
           </div>
-
           {/* Navegación */}
           <div>
             <h3 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Navegación</h3>
@@ -45,8 +42,6 @@ export function Footer() {
                 { label: 'Sobre SurLab', href: '#nosotros' },
                 { label: 'Programas', href: '#programas' },
                 { label: 'Ejes temáticos', href: '#ejes' },
-                { label: 'Publicaciones', href: '#publicaciones' },
-                { label: 'Blog', href: '#publicaciones' },
                 { label: 'Contacto', href: '#contacto' },
               ].map((item) => (
                 <li key={item.label}>
@@ -57,7 +52,6 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
           {/* Programas */}
           <div>
             <h3 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Programas</h3>
@@ -76,33 +70,30 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
           {/* Contacto */}
           <div>
             <h3 className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4">Contacto</h3>
             <ul className="flex flex-col gap-3">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[oklch(0.82_0.1_175)] mt-0.5 shrink-0" />
-                <span className="text-sm text-white/60">Córdoba, Argentina</span>
+                <span className="text-sm text-white/60">
+                  Tenerife 4304 - Barrio Parque Horizonte
+                  <br />
+                  Parque Horizonte
+                  <br />
+                  5016 - Córdoba
+                </span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-[oklch(0.82_0.1_175)] shrink-0" />
-                <a href="mailto:info@surlab.org" className="text-sm text-white/60 hover:text-white transition-colors">
-                  info@surlab.org
+                <a href="mailto:consejoadm@sur-lab.org" className="text-sm text-white/60 hover:text-white transition-colors">
+                  consejoadm@sur-lab.org
                 </a>
               </li>
             </ul>
-            <div className="mt-6 pt-6 border-t border-white/10">
-              <p className="text-xs text-white/40 mb-2">Alianzas estratégicas</p>
-              <div className="flex flex-col gap-1.5">
-                <span className="text-sm text-white/60">OEI</span>
-                <span className="text-sm text-white/60">UTN Córdoba</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
-
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -112,7 +103,6 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <Link href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Privacidad</Link>
             <Link href="#" className="text-xs text-white/40 hover:text-white/70 transition-colors">Términos</Link>
-            <Link href="/admin" className="text-xs text-white/40 hover:text-[oklch(0.82_0.1_175)] transition-colors">Panel CMS</Link>
           </div>
         </div>
       </div>

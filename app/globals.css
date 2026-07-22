@@ -9,7 +9,7 @@
   --font-heading: var(--font-inter), 'Inter Fallback', system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), 'Geist Mono Fallback';
 
-  /* SurLab brand palette */
+  /* SURLAB brand palette */
   --color-navy: oklch(0.22 0.05 255);
   --color-navy-light: oklch(0.28 0.06 255);
   --color-purple: oklch(0.45 0.18 290);

@@ -35,7 +35,7 @@ export function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 items-end">
           <div>
             <span className="text-xs font-semibold text-[oklch(0.45_0.18_290)] uppercase tracking-widest">
-              Sobre SurLab
+              Sobre SURLAB
             </span>
             <h2 className="mt-3 text-4xl md:text-5xl font-bold text-[oklch(0.22_0.05_255)] leading-tight text-balance">
               Un laboratorio de pensamiento y acción para el Sur
@@ -43,7 +43,7 @@ export function AboutSection() {
           </div>
           <div>
             <p className="text-lg text-[oklch(0.40_0.03_255)] leading-relaxed text-pretty">
-              Fundada en Córdoba en 2026, SurLab es un espacio diseñado específicamente para cerrar la brecha
+              Fundada en Córdoba en 2026, SURLAB es un espacio diseñado específicamente para cerrar la brecha
               entre quienes piensan las políticas y quienes las implementan. Nuestro enfoque combina rigor
               académico con vocación transformadora.
             </p>

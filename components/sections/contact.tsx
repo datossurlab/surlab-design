@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, MapPin, Phone, ChevronDown } from 'lucide-react'
+import { Mail, MapPin, ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
     q: '¿Cómo puedo colaborar con SurLab?',
-    a: 'Podés contactarnos a través del formulario o enviarnos un correo a info@surlab.org. También podés seguirnos en redes sociales para enterarte de convocatorias abiertas.',
+    a: 'Podés contactarnos a través del formulario o enviárnos un correo a consejoadm@sur-lab.org. También podés seguirnos en redes sociales para enterarte de convocatorias abiertas.',
   },
   {
     q: '¿SurLab tiene convocatorias para investigadores?',
@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     q: '¿Dónde está ubicado SurLab?',
-    a: 'SurLab tiene su sede en la ciudad de Córdoba, Argentina. También contamos con vínculos con instituciones en toda Iberoamérica a través de nuestra alianza con la OEI.',
+    a: 'SurLab tiene su sede en la ciudad de Córdoba, Argentina, en Tenerife 4304, Barrio Parque Horizonte.',
   },
 ]
 
@@ -45,12 +45,10 @@ export function ContactSection() {
               ¿Tenés una consulta, propuesta de colaboración o querés saber más sobre SurLab?
               Escribinos, con gusto te respondemos.
             </p>
-
             <div className="flex flex-col gap-4 mb-12">
               {[
-                { icon: MapPin, label: 'Córdoba, Argentina' },
-                { icon: Mail, label: 'info@surlab.org', href: 'mailto:info@surlab.org' },
-                { icon: Phone, label: '+54 351 000 0000' },
+                { icon: MapPin, label: 'Tenerife 4304 - Barrio Parque Horizonte, Parque Horizonte, 5016-Córdoba' },
+                { icon: Mail, label: 'consejoadm@sur-lab.org', href: 'mailto:consejoadm@sur-lab.org' },
               ].map(({ icon: Icon, label, href }) => (
                 <div key={label} className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[oklch(0.22_0.05_255)] flex items-center justify-center shrink-0">
@@ -66,7 +64,6 @@ export function ContactSection() {
                 </div>
               ))}
             </div>
-
             {/* FAQ */}
             <div>
               <h3 className="text-sm font-semibold text-[oklch(0.22_0.05_255)] uppercase tracking-widest mb-4">
@@ -97,7 +94,6 @@ export function ContactSection() {
               </div>
             </div>
           </div>
-
           {/* Right: form */}
           <div className="bg-[oklch(0.97_0.005_255)] rounded-2xl p-8 border border-[oklch(0.91_0.01_255)]">
             {sent ? (
@@ -107,7 +103,7 @@ export function ContactSection() {
                 </div>
                 <h3 className="text-xl font-bold text-[oklch(0.22_0.05_255)]">¡Mensaje enviado!</h3>
                 <p className="text-[oklch(0.50_0.03_255)] text-sm leading-relaxed max-w-xs">
-                  Recibimos tu consulta y te responderemos a la brevedad desde info@surlab.org.
+                  Recibimos tu consulta y te responderemos a la brevedad desde consejoadm@sur-lab.org.
                 </p>
               </div>
             ) : (

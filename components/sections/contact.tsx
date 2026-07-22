@@ -5,17 +5,16 @@ import { Mail, MapPin, ChevronDown } from 'lucide-react'
 
 const faqs = [
   {
-    q: '¿Cómo puedo colaborar con SurLab?',
+    q: '¿Cómo puedo colaborar con SURLAB?',
     a: 'Podés contactarnos a través del formulario o enviárnos un correo a consejoadm@sur-lab.org. También podés seguirnos en redes sociales para enterarte de convocatorias abiertas.',
   },
   {
-    q: '¿SurLab tiene convocatorias para investigadores?',
+            q: '¿SURLAB tiene convocatorias para investigadores?',
     a: 'Sí, periódicamente lanzamos convocatorias para investigadores, becarios y colaboradores. Te recomendamos suscribirte al newsletter para no perderte ninguna novedad.',
   },
   {
-    q: '¿Dónde está ubicado SurLab?',
-    a: 'SurLab tiene su sede en la ciudad de Córdoba, Argentina, en Tenerife 4304, Barrio Parque Horizonte.',
-  },
+            q: '¿Dónde está ubicado SURLAB?',
+  a: 'SURLAB tiene su sede en la ciudad de Córdoba, Argentina, en Tenerife 4304, Barrio Parque Horizonte, Córdoba, Argentina.',  },
 ]
 
 export function ContactSection() {
@@ -47,8 +46,8 @@ export function ContactSection() {
             </p>
             <div className="flex flex-col gap-4 mb-12">
               {[
-                { icon: MapPin, label: 'Tenerife 4304 - Barrio Parque Horizonte, Parque Horizonte, 5016-Córdoba' },
-                { icon: Mail, label: 'consejoadm@sur-lab.org', href: 'mailto:consejoadm@sur-lab.org' },
+          { icon: MapPin, label: 'Tenerife 4304, Barrio Parque Horizonte, Córdoba, Argentina' },
+      { icon: Mail, label: 'consejoadm@sur-lab.org', href: 'mailto:consejoadm@sur-lab.org' },
               ].map(({ icon: Icon, label, href }) => (
                 <div key={label} className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-[oklch(0.22_0.05_255)] flex items-center justify-center shrink-0">

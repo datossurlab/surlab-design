@@ -4,7 +4,6 @@ import { HeroSection } from '@/components/sections/hero'
 import { AboutSection } from '@/components/sections/about'
 import { ProgramsSection } from '@/components/sections/programs'
 import { AxesSection } from '@/components/sections/axes'
-import { PublicationsSection } from '@/components/sections/publications'
 import { NewsletterSection } from '@/components/sections/newsletter'
 import { ContactSection } from '@/components/sections/contact'
 
@@ -17,8 +16,7 @@ export default function HomePage() {
         <AboutSection />
         <ProgramsSection />
         <AxesSection />
-        <PublicationsSection />
-        <NewsletterSection />
+          <NewsletterSection />
         <ContactSection />
       </main>
       <Footer />

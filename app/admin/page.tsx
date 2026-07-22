@@ -422,7 +422,7 @@ export default function AdminPage() {
                   {[
                     { label: 'Nombre del sitio', value: 'SurLab' },
                     { label: 'Descripción', value: 'Laboratorio de Innovación Política' },
-                    { label: 'Email de contacto', value: 'info@surlab.org' },
+                    { label: 'Email de contacto', value: 'consejoadm@sur-lab.org' },
                     { label: 'Dominio', value: 'surlab.org' },
                   ].map((field) => (
                     <div key={field.label} className="flex flex-col gap-1.5">

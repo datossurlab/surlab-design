@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail, MapPin, Globe, ExternalLink, Share2, Rss } from 'lucide-react'
+import { Mail, MapPin, Instagram, Linkedin, Facebook } from 'lucide-react'
 
 export function Footer() {
   return (
@@ -19,17 +19,14 @@ export function Footer() {
               Laboratorio de Innovación Política para el desarrollo inclusivo de América Latina desde el Sur Global.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#" aria-label="Sitio web" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                <Globe className="w-4 h-4 text-white/70" />
+              <a href="https://www.instagram.com/fundacionsurlab" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                <Instagram className="w-4 h-4 text-white/70" />
               </a>
-              <a href="#" aria-label="Redes sociales" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                <Share2 className="w-4 h-4 text-white/70" />
+              <a href="https://www.linkedin.com/company/fundacionsurlab" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                <Linkedin className="w-4 h-4 text-white/70" />
               </a>
-              <a href="#" aria-label="Newsletter" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                <Rss className="w-4 h-4 text-white/70" />
-              </a>
-              <a href="#" aria-label="Enlace externo" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-                <ExternalLink className="w-4 h-4 text-white/70" />
+              <a href="https://www.facebook.com/share/1D8qVE4Cgj/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-8 h-8 rounded-md bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                <Facebook className="w-4 h-4 text-white/70" />
               </a>
             </div>
           </div>

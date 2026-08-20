@@ -672,8 +672,7 @@ export default function Jornadas2026Page() {
                   title="Formulario de inscripción de monday.com"
                   style={{
                     width: "100%",
-                    minHeight: "920px",
-                    height: "920px",
+                    height: "14000px",
                     border: 0,
                     display: "block",
                     background: "#ebe7e2",

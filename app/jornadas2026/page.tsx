@@ -231,37 +231,31 @@ export default function Jornadas2026Page() {
       </section>
 
       <section id="inscripcion" className="section sectionDark">
-        <div className="container ctaLayout">
-          <div className="ctaCopy">
-            <div className="line" />
-            <p className="sectionEyebrow sectionEyebrowTeal">Cómo participar</p>
-            <h2 className="sectionTitle sectionTitleDark">Inscribite a la primera jornada</h2>
-            <p className="ctaText">
-              Completá el formulario para recibir la confirmación y el enlace de acceso a la transmisión.
-            </p>
-          </div>
+        <div className="container finalCta">
+          <div className="line" />
+          <p className="sectionEyebrow sectionEyebrowTeal">Inscripción</p>
 
-          <div className="ctaCard">
-            <p className="ctaCardEyebrow">Formulario de inscripción · monday.com</p>
-            <h3>Completá tu inscripción</h3>
-            <p>
-              El formulario se abre en una nueva pestaña para que puedas inscribirte de forma rápida, clara y sin interrupciones.
-            </p>
-            <a
-              href={formUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btnDark"
-            >
-              Abrir formulario
-            </a>
-            <div className="ctaLegal">
-              <strong>Formulario gestionado por monday.com</strong>
-              <p>
-                Al enviar tus datos, aceptás que sean procesados en monday.com para la organización de esta jornada.
-              </p>
-            </div>
-          </div>
+          <h2 className="sectionTitle sectionTitleDark">
+            Sumate a la primera jornada de SurLab 2026
+          </h2>
+
+          <p className="ctaText">
+            La inscripción es libre y gratuita. Completá el formulario para recibir
+            la confirmación y el enlace de acceso a la transmisión.
+          </p>
+
+          <a
+            href={formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btnPrimary finalCtaButton"
+          >
+            Inscribirme
+          </a>
+
+          <p className="finalCtaNote">
+            El formulario se abrirá en una nueva pestaña.
+          </p>
         </div>
       </section>
 
@@ -427,12 +421,6 @@ export default function Jornadas2026Page() {
           background: transparent;
         }
 
-        .btnDark {
-          background: #05122b;
-          color: #ffffff;
-          width: 100%;
-        }
-
         .section {
           padding: 64px 0 72px;
         }
@@ -479,7 +467,7 @@ export default function Jornadas2026Page() {
         }
 
         .sectionTitleDark {
-          max-width: 520px;
+          max-width: 680px;
         }
 
         .bodyLarge,
@@ -495,8 +483,7 @@ export default function Jornadas2026Page() {
           margin-bottom: 26px;
         }
 
-        .splitGrid,
-        .ctaLayout {
+        .splitGrid {
           display: grid;
           grid-template-columns: 1fr;
           gap: 32px;
@@ -678,63 +665,34 @@ export default function Jornadas2026Page() {
           font-size: 16px;
         }
 
-        .ctaCopy {
-          max-width: 520px;
+        .finalCta {
+          max-width: 760px;
+          text-align: left;
         }
 
-        .ctaText {
+        .finalCta .line {
+          margin-inline: 0;
+        }
+
+        .finalCta .sectionTitle {
+          max-width: 680px;
+        }
+
+        .finalCta .ctaText {
           color: rgba(247, 251, 255, 0.78);
-          max-width: 460px;
+          margin: 0 0 24px;
+          max-width: 580px;
         }
 
-        .ctaCard {
-          background: #ebe7e2;
-          color: #0d1726;
-          border-top: 4px solid #4dd7c5;
-          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
-          padding: 20px;
-          width: 100%;
+        .finalCtaButton {
+          min-width: 190px;
         }
 
-        .ctaCardEyebrow {
-          color: #666d79;
-          margin: 0 0 16px;
-        }
-
-        .ctaCard h3 {
-          margin: 0 0 12px;
-          font-size: clamp(1.8rem, 7vw, 2.4rem);
-          line-height: 1;
-          font-weight: 900;
-          letter-spacing: -0.05em;
-          text-wrap: balance;
-        }
-
-        .ctaCard p {
-          margin: 0 0 20px;
-          color: #5d6878;
-          line-height: 1.65;
-          font-size: 15px;
-          max-width: 520px;
-        }
-
-        .ctaLegal {
-          margin-top: 18px;
-          padding-top: 14px;
-          border-top: 2px solid #6e9be6;
-        }
-
-        .ctaLegal strong {
-          display: block;
-          margin-bottom: 6px;
+        .finalCtaNote {
+          margin: 14px 0 0;
+          color: rgba(247, 251, 255, 0.52);
           font-size: 14px;
-        }
-
-        .ctaLegal p {
-          margin: 0;
-          font-size: 14px;
-          line-height: 1.55;
-          color: #4f5867;
+          line-height: 1.5;
         }
 
         .footer {
@@ -799,16 +757,11 @@ export default function Jornadas2026Page() {
             min-width: 180px;
           }
 
-          .btnDark {
-            width: fit-content;
-          }
-
           .section {
             padding: 84px 0 92px;
           }
 
-          .splitGrid,
-          .ctaLayout {
+          .splitGrid {
             grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.9fr);
             gap: 44px;
           }
@@ -857,8 +810,8 @@ export default function Jornadas2026Page() {
             font-size: 17px;
           }
 
-          .ctaCard {
-            padding: 24px;
+          .finalCta {
+            padding-left: 10%;
           }
         }
 
@@ -866,12 +819,6 @@ export default function Jornadas2026Page() {
           .splitGrid {
             grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.9fr);
             gap: 52px;
-          }
-
-          .ctaLayout {
-            grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1fr);
-            gap: 42px;
-            align-items: center;
           }
 
           .speakerGrid {
@@ -926,3 +873,4 @@ function InfoItem({ title, text }: { title: string; text: string }) {
     </div>
   );
 }
+

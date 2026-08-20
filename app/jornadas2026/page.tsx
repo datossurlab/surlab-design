@@ -5,33 +5,33 @@ const speakers = [
     name: "Dr. Maximiliano Alonso",
     role: "CAF · Presidente Honorario de SurLab",
     detail: "Apertura institucional de las jornadas.",
-  },
-  {
-    name: "Mgter. Gabriel Suárez",
-    role: "Decano, IAPCS · Universidad Nacional de Villa María",
-    detail: "Apertura institucional de las jornadas.",
+    image: "/images/maximiliano-alonso.jpg",
   },
   {
     name: "Lic. Marcela Reartes",
     role: "Presidenta de SurLab",
     detail: "Coordinación del panel.",
+    image: "/images/marcela-reartes.jpg",
   },
   {
     name: "Mario Pino",
     role: "Panelista · Soberanía externa",
     detail:
       'Del orden interestatal de posguerra a la geopolítica de los "grandes espacios".',
+    image: "/images/mario-pino.jpg",
   },
   {
     name: "Jorge L. Méndez",
     role: "Panelista · Soberanía interna",
     detail:
       'El nuevo régimen "para democrático" del Anti príncipe y la externalización de la comunidad política.',
+    image: "/images/jorge-mendez.jpg",
   },
   {
     name: "Adolfo Sequeira",
     role: "Panelista · Soberanía cultural",
     detail: "El grado cero de la cultura.",
+    image: "/images/adolfo-sequeira.jpg",
   },
 ];
 
@@ -184,7 +184,9 @@ export default function Jornadas2026Page() {
           <div className="speakerGrid">
             {speakers.map((speaker) => (
               <article key={speaker.name} className="speakerCard">
-                <div className="speakerImage">Foto</div>
+                <div className="speakerImage">
+                  <img src={speaker.image} alt={speaker.name} loading="lazy" />
+                </div>
                 <h3>{speaker.name}</h3>
                 <p className="speakerRole">{speaker.role}</p>
                 <p className="speakerDetail">{speaker.detail}</p>
@@ -253,6 +255,9 @@ export default function Jornadas2026Page() {
             Inscribirme
           </a>
 
+          <p className="finalCtaNote">
+            El formulario se abrirá en una nueva pestaña.
+          </p>
         </div>
       </section>
 
@@ -311,8 +316,7 @@ export default function Jornadas2026Page() {
 
         .brand,
         .eyebrow,
-        .sectionEyebrow,
-        .ctaCardEyebrow {
+        .sectionEyebrow {
           font-size: 12px;
           font-weight: 800;
           letter-spacing: 0.16em;
@@ -541,13 +545,13 @@ export default function Jornadas2026Page() {
           border-top: 3px solid #4dd7c5;
           background: #e8edf2;
           aspect-ratio: 1.3 / 0.92;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          color: #96a3b2;
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: 0.04em;
+        }
+
+        .speakerImage img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .speakerCard h3 {

@@ -96,7 +96,7 @@ export default function Jornadas2026Page() {
         <div className="container">
           <div className="topbar">
             <span className="eyebrow brand">Jornadas SurLab 2026</span>
-            <nav className="nav">
+            <nav className="nav" aria-label="Navegación principal">
               <a href="#sobre">Sobre el evento</a>
               <a href="#oradores">Oradores</a>
               <a href="#programa">Programa</a>
@@ -144,17 +144,17 @@ export default function Jornadas2026Page() {
       </section>
 
       <section id="sobre" className="section sectionLight">
-        <div className="container twoColIntro">
-          <div>
+        <div className="container splitGrid">
+          <div className="introBlock">
             <div className="line" />
             <p className="sectionEyebrow">¿Sobre qué vamos a hablar?</p>
             <h2 className="sectionTitle sectionTitleLarge">
               Vivimos una transición histórica que todavía no tiene nombre propio.
             </h2>
-            <p className="leadText">
+            <p className="bodyLarge">
               Un orden se agota y el siguiente no termina de aparecer. En ese intervalo, la región discute cuánto margen de decisión le queda frente a la geopolítica de los grandes espacios, la reconfiguración de los partidos y el avance de la inteligencia artificial sobre la experiencia cultural.
             </p>
-            <p className="leadText">
+            <p className="bodyLarge">
               La primera jornada aborda tres dilemas de soberanía: externa, interna y cultural.
             </p>
           </div>
@@ -193,7 +193,7 @@ export default function Jornadas2026Page() {
       </section>
 
       <section id="programa" className="section sectionLight">
-        <div className="container">
+        <div className="container narrowContainer">
           <h2 className="sectionTitle">Programa</h2>
           <p className="sectionIntro">Tocá cada bloque para ver el detalle.</p>
 
@@ -228,9 +228,9 @@ export default function Jornadas2026Page() {
         </div>
       </section>
 
-      <section id="inscripcion" className="section sectionDark ctaSection">
-        <div className="container ctaGrid">
-          <div>
+      <section id="inscripcion" className="section sectionDark">
+        <div className="container ctaLayout">
+          <div className="ctaCopy">
             <div className="line" />
             <p className="sectionEyebrow sectionEyebrowTeal">Cómo participar</p>
             <h2 className="sectionTitle sectionTitleDark">Inscribite a la primera jornada</h2>
@@ -272,34 +272,48 @@ export default function Jornadas2026Page() {
       </footer>
 
       <style jsx>{`
+        :global(*) {
+          box-sizing: border-box;
+        }
+
         :global(html) {
           scroll-behavior: smooth;
+        }
+
+        :global(body) {
+          margin: 0;
+          overflow-x: hidden;
+          background: #ffffff;
         }
 
         .page {
           background: #ffffff;
           color: #0d1726;
           font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          overflow-x: hidden;
         }
 
         .container {
-          width: min(1180px, calc(100% - 48px));
+          width: min(1120px, calc(100% - 32px));
           margin: 0 auto;
         }
 
+        .narrowContainer {
+          width: min(960px, calc(100% - 32px));
+        }
+
         .hero {
-          background: linear-gradient(180deg, #05122b 0%, #06152f 100%);
+          background: linear-gradient(180deg, #05122b 0%, #071734 100%);
           color: #f5f8ff;
-          padding: 40px 0 56px;
+          padding: 28px 0 48px;
         }
 
         .topbar {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          flex-direction: column;
+          align-items: flex-start;
           gap: 16px;
-          margin-bottom: 48px;
-          flex-wrap: wrap;
+          margin-bottom: 36px;
         }
 
         .brand,
@@ -320,26 +334,32 @@ export default function Jornadas2026Page() {
 
         .nav {
           display: flex;
-          gap: 18px;
           flex-wrap: wrap;
+          gap: 10px;
+          width: 100%;
         }
 
         .nav a {
-          color: rgba(245, 248, 255, 0.82);
+          color: rgba(245, 248, 255, 0.84);
           text-decoration: none;
-          font-size: 14px;
+          font-size: 13px;
+          line-height: 1.2;
+          padding: 10px 12px;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 999px;
         }
 
         .heroContent {
-          max-width: 860px;
+          max-width: 840px;
         }
 
         .heroTitle {
           margin: 0;
-          font-size: clamp(3rem, 8vw, 5.6rem);
-          line-height: 0.94;
+          font-size: clamp(2.65rem, 12vw, 5.6rem);
+          line-height: 0.95;
           font-weight: 900;
-          letter-spacing: -0.055em;
+          letter-spacing: -0.06em;
+          text-wrap: balance;
         }
 
         .heroTitle span {
@@ -351,36 +371,37 @@ export default function Jornadas2026Page() {
         }
 
         .heroSubtitle {
-          margin-top: 22px;
-          max-width: 780px;
-          font-size: clamp(1.15rem, 2.4vw, 1.85rem);
-          line-height: 1.2;
+          margin: 18px 0 0;
+          max-width: 760px;
+          font-size: clamp(1.1rem, 4vw, 1.85rem);
+          line-height: 1.22;
           font-weight: 700;
         }
 
         .heroMeta {
-          margin-top: 44px;
-          padding-top: 28px;
+          margin-top: 32px;
+          padding-top: 22px;
           border-top: 1px solid rgba(255, 255, 255, 0.12);
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
-          gap: 24px;
+          grid-template-columns: 1fr;
+          gap: 18px;
         }
 
         .heroActions {
           display: flex;
-          gap: 16px;
-          flex-wrap: wrap;
-          margin-top: 38px;
+          flex-direction: column;
+          gap: 12px;
+          margin-top: 28px;
         }
 
         .btn {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-height: 50px;
-          padding: 0 24px;
-          border-radius: 6px;
+          min-height: 48px;
+          width: 100%;
+          padding: 0 20px;
+          border-radius: 8px;
           text-decoration: none;
           font-weight: 800;
           font-size: 14px;
@@ -407,11 +428,11 @@ export default function Jornadas2026Page() {
         .btnDark {
           background: #05122b;
           color: #ffffff;
-          width: fit-content;
+          width: 100%;
         }
 
         .section {
-          padding: 84px 0 92px;
+          padding: 64px 0 72px;
         }
 
         .sectionLight {
@@ -441,60 +462,59 @@ export default function Jornadas2026Page() {
         }
 
         .sectionTitle {
-          font-size: clamp(2.3rem, 4vw, 3.2rem);
-          line-height: 1;
-          letter-spacing: -0.04em;
+          font-size: clamp(2.1rem, 8vw, 3.2rem);
+          line-height: 0.98;
+          letter-spacing: -0.05em;
           font-weight: 900;
           margin: 14px 0 12px;
+          text-wrap: balance;
         }
 
         .sectionTitleLarge {
-          font-size: clamp(2.5rem, 6vw, 4.45rem);
-          line-height: 0.98;
-          max-width: 700px;
-          margin-bottom: 24px;
+          font-size: clamp(2.2rem, 9vw, 4.4rem);
+          max-width: 680px;
+          margin-bottom: 22px;
         }
 
         .sectionTitleDark {
           max-width: 520px;
         }
 
+        .bodyLarge,
         .sectionIntro,
-        .leadText,
         .ctaText {
           color: #5d6878;
-          font-size: 17px;
-          line-height: 1.75;
+          font-size: 16px;
+          line-height: 1.72;
           max-width: 720px;
         }
 
         .sectionIntro {
-          margin-bottom: 30px;
+          margin-bottom: 26px;
         }
 
-        .twoColIntro,
-        .ctaGrid {
+        .splitGrid,
+        .ctaLayout {
           display: grid;
-          grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.95fr);
-          gap: 52px;
+          grid-template-columns: 1fr;
+          gap: 32px;
           align-items: start;
         }
 
         .themeList {
           display: grid;
-          gap: 22px;
-          padding-top: 16px;
+          gap: 18px;
         }
 
         .themeItem {
           display: grid;
-          grid-template-columns: 48px 1fr;
-          gap: 16px;
+          grid-template-columns: 40px 1fr;
+          gap: 12px;
         }
 
         .themeIcon {
-          width: 48px;
-          height: 48px;
+          width: 40px;
+          height: 40px;
           border-radius: 50%;
           border: 1px solid rgba(77, 215, 197, 0.32);
           background: rgba(77, 215, 197, 0.18);
@@ -502,26 +522,27 @@ export default function Jornadas2026Page() {
           align-items: center;
           justify-content: center;
           color: #1cae9b;
-          font-size: 18px;
+          font-size: 16px;
           font-weight: 800;
+          flex-shrink: 0;
         }
 
         .themeItem h3 {
-          margin: 2px 0 8px;
-          font-size: 22px;
-          line-height: 1.1;
+          margin: 1px 0 6px;
+          font-size: 20px;
+          line-height: 1.12;
         }
 
         .themeItem p {
           margin: 0;
           color: #5d6878;
           line-height: 1.55;
-          font-size: 17px;
+          font-size: 16px;
         }
 
         .speakerGrid {
           display: grid;
-          grid-template-columns: repeat(3, minmax(0, 1fr));
+          grid-template-columns: 1fr;
           gap: 22px;
         }
 
@@ -530,7 +551,6 @@ export default function Jornadas2026Page() {
         }
 
         .speakerImage {
-          position: relative;
           overflow: hidden;
           border-top: 3px solid #4dd7c5;
           background: #e8edf2;
@@ -546,7 +566,7 @@ export default function Jornadas2026Page() {
 
         .speakerCard h3 {
           margin: 14px 0 8px;
-          font-size: 24px;
+          font-size: 22px;
           line-height: 1.08;
           font-weight: 900;
           letter-spacing: -0.03em;
@@ -555,7 +575,7 @@ export default function Jornadas2026Page() {
         .speakerRole {
           margin: 0 0 8px;
           color: #5d6878;
-          font-size: 16px;
+          font-size: 15px;
           line-height: 1.45;
         }
 
@@ -579,10 +599,10 @@ export default function Jornadas2026Page() {
           list-style: none;
           cursor: pointer;
           display: grid;
-          grid-template-columns: 88px 1fr 28px;
-          align-items: center;
-          gap: 16px;
-          padding: 22px 0;
+          grid-template-columns: 48px 1fr 20px;
+          align-items: start;
+          gap: 10px;
+          padding: 18px 0;
         }
 
         .accordionSummary::-webkit-details-marker {
@@ -592,25 +612,27 @@ export default function Jornadas2026Page() {
         .accordionKey {
           color: #149ea1;
           font-weight: 900;
-          font-size: 28px;
+          font-size: 21px;
           letter-spacing: -0.03em;
+          line-height: 1.1;
         }
 
         .accordionHeading {
-          font-size: 28px;
+          font-size: 20px;
           font-weight: 800;
           letter-spacing: -0.03em;
+          line-height: 1.15;
         }
 
         .accordionIcon {
           color: #7a8594;
-          font-size: 18px;
+          font-size: 16px;
           text-align: right;
+          line-height: 1.2;
         }
 
         .accordionBody {
-          padding: 0 0 34px 88px;
-          max-width: 860px;
+          padding: 0 0 26px 48px;
         }
 
         .introList {
@@ -621,15 +643,15 @@ export default function Jornadas2026Page() {
         .introList p,
         .programSpeaker {
           margin: 0;
-          font-size: 18px;
+          font-size: 16px;
           color: #5d6878;
           line-height: 1.6;
         }
 
         .accordionBody h3 {
           margin: 0 0 8px;
-          font-size: 28px;
-          line-height: 1.05;
+          font-size: 22px;
+          line-height: 1.08;
           font-weight: 800;
           letter-spacing: -0.03em;
         }
@@ -639,27 +661,27 @@ export default function Jornadas2026Page() {
           color: #6d7a8a;
           font-style: italic;
           line-height: 1.55;
-          font-size: 16px;
+          font-size: 15px;
         }
 
         .programSpeaker {
-          margin-bottom: 18px;
-          font-size: 17px;
+          margin-bottom: 16px;
+          font-size: 16px;
         }
 
         .programText {
           margin: 0;
           color: #5d6878;
-          line-height: 1.8;
-          font-size: 17px;
+          line-height: 1.72;
+          font-size: 16px;
         }
 
-        .ctaSection {
-          padding-top: 84px;
+        .ctaCopy {
+          max-width: 520px;
         }
 
         .ctaText {
-          color: rgba(247, 251, 255, 0.76);
+          color: rgba(247, 251, 255, 0.78);
           max-width: 460px;
         }
 
@@ -668,32 +690,34 @@ export default function Jornadas2026Page() {
           color: #0d1726;
           border-top: 4px solid #4dd7c5;
           box-shadow: 0 16px 40px rgba(0, 0, 0, 0.24);
-          padding: 24px;
+          padding: 20px;
+          width: 100%;
         }
 
         .ctaCardEyebrow {
           color: #666d79;
-          margin: 0 0 20px;
+          margin: 0 0 16px;
         }
 
         .ctaCard h3 {
           margin: 0 0 12px;
-          font-size: clamp(2rem, 3vw, 2.4rem);
+          font-size: clamp(1.8rem, 7vw, 2.4rem);
           line-height: 1;
           font-weight: 900;
-          letter-spacing: -0.04em;
+          letter-spacing: -0.05em;
+          text-wrap: balance;
         }
 
         .ctaCard p {
-          margin: 0 0 22px;
+          margin: 0 0 20px;
           color: #5d6878;
           line-height: 1.65;
-          font-size: 16px;
+          font-size: 15px;
           max-width: 520px;
         }
 
         .ctaLegal {
-          margin-top: 20px;
+          margin-top: 18px;
           padding-top: 14px;
           border-top: 2px solid #6e9be6;
         }
@@ -714,116 +738,159 @@ export default function Jornadas2026Page() {
         .footer {
           background: #05122b;
           color: rgba(245, 248, 255, 0.72);
-          padding: 28px 0 40px;
+          padding: 24px 0 36px;
         }
 
         .footer p {
           margin: 0;
           max-width: 760px;
-          font-size: 15px;
+          font-size: 14px;
           line-height: 1.7;
         }
 
-        @media (max-width: 980px) {
-          .heroMeta,
-          .speakerGrid,
-          .twoColIntro,
-          .ctaGrid {
-            grid-template-columns: 1fr;
+        @media (min-width: 721px) {
+          .container {
+            width: min(1120px, calc(100% - 48px));
           }
 
-          .themeList {
-            padding-top: 0;
+          .hero {
+            padding: 40px 0 56px;
+          }
+
+          .topbar {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 48px;
+          }
+
+          .nav {
+            width: auto;
+            gap: 18px;
+          }
+
+          .nav a {
+            padding: 0;
+            border: 0;
+            border-radius: 0;
+            font-size: 14px;
+          }
+
+          .heroMeta {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 44px;
+            padding-top: 28px;
+          }
+
+          .heroActions {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 16px;
+            margin-top: 38px;
+          }
+
+          .btn {
+            width: auto;
+            min-width: 180px;
+          }
+
+          .btnDark {
+            width: fit-content;
+          }
+
+          .section {
+            padding: 84px 0 92px;
+          }
+
+          .splitGrid,
+          .ctaLayout {
+            grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.9fr);
+            gap: 44px;
+          }
+
+          .themeItem {
+            grid-template-columns: 48px 1fr;
+            gap: 16px;
+          }
+
+          .themeIcon {
+            width: 48px;
+            height: 48px;
+            font-size: 18px;
           }
 
           .speakerGrid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
           }
 
-          .accordionBody {
-            padding-left: 64px;
-          }
-
           .accordionSummary {
-            grid-template-columns: 64px 1fr 24px;
-          }
-        }
-
-        @media (max-width: 720px) {
-          .container {
-            width: min(1180px, calc(100% - 32px));
-          }
-
-          .hero {
-            padding-top: 28px;
-            padding-bottom: 44px;
-          }
-
-          .topbar {
-            margin-bottom: 36px;
-          }
-
-          .nav {
-            gap: 12px 16px;
-          }
-
-          .heroMeta {
-            gap: 18px;
-          }
-
-          .heroActions {
-            flex-direction: column;
-            align-items: stretch;
-          }
-
-          .btn {
-            width: 100%;
-          }
-
-          .section {
-            padding: 64px 0 72px;
-          }
-
-          .speakerGrid {
-            grid-template-columns: 1fr;
-          }
-
-          .accordionSummary {
-            grid-template-columns: 52px 1fr 22px;
-            gap: 12px;
-            padding: 18px 0;
+            grid-template-columns: 72px 1fr 24px;
+            align-items: center;
+            gap: 14px;
+            padding: 22px 0;
           }
 
           .accordionKey {
-            font-size: 22px;
+            font-size: 24px;
           }
 
           .accordionHeading {
-            font-size: 21px;
-            line-height: 1.1;
+            font-size: 24px;
           }
 
           .accordionBody {
-            padding: 0 0 26px 52px;
+            padding: 0 0 30px 72px;
           }
 
           .accordionBody h3 {
-            font-size: 22px;
+            font-size: 26px;
           }
 
-          .themeItem {
-            grid-template-columns: 40px 1fr;
-            gap: 12px;
-          }
-
-          .themeIcon {
-            width: 40px;
-            height: 40px;
-            font-size: 16px;
+          .programText,
+          .programSpeaker,
+          .introList p {
+            font-size: 17px;
           }
 
           .ctaCard {
-            padding: 20px;
+            padding: 24px;
+          }
+        }
+
+        @media (min-width: 981px) {
+          .splitGrid {
+            grid-template-columns: minmax(0, 1.28fr) minmax(300px, 0.9fr);
+            gap: 52px;
+          }
+
+          .ctaLayout {
+            grid-template-columns: minmax(0, 0.95fr) minmax(340px, 1fr);
+            gap: 42px;
+            align-items: center;
+          }
+
+          .speakerGrid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+          }
+
+          .accordionSummary {
+            grid-template-columns: 88px 1fr 28px;
+            gap: 16px;
+          }
+
+          .accordionKey {
+            font-size: 28px;
+          }
+
+          .accordionHeading {
+            font-size: 28px;
+          }
+
+          .accordionBody {
+            padding: 0 0 34px 88px;
           }
         }
       `}</style>

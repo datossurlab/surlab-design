@@ -1,3 +1,5 @@
+"use client";
+
 const speakers = [
   {
     name: "Dr. Maximiliano Alonso",

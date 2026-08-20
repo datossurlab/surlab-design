@@ -1,25 +1,20 @@
-import Link from "next/link";
-
 const speakers = [
   {
     name: "Dr. Maximiliano Alonso",
     role: "CAF · Presidente Honorario de SurLab",
     detail: "Apertura institucional de las jornadas.",
-    accent: "Apertura institucional",
     image: "/images/jornadas2026/maximiliano-alonso.jpg",
   },
   {
     name: "Mgter. Gabriel Suárez",
     role: "Decano, IAPCS · Universidad Nacional de Villa María",
     detail: "Apertura institucional de las jornadas.",
-    accent: "Apertura institucional",
     image: "/images/jornadas2026/gabriel-suarez.jpg",
   },
   {
     name: "Lic. Marcela Reartes",
     role: "Presidenta de SurLab",
     detail: "Coordinación del panel.",
-    accent: "Coordinación del panel",
     image: "/images/jornadas2026/marcela-reartes.jpg",
   },
   {
@@ -27,7 +22,6 @@ const speakers = [
     role: "Panelista · Soberanía externa",
     detail:
       'Del orden interestatal de posguerra a la geopolítica de los "grandes espacios".',
-    accent: "Soberanía externa",
     image: "/images/jornadas2026/mario-pino.jpg",
   },
   {
@@ -35,14 +29,12 @@ const speakers = [
     role: "Panelista · Soberanía interna",
     detail:
       'El nuevo régimen "para democrático" del Anti príncipe y la externalización de la comunidad política.',
-    accent: "Soberanía interna",
     image: "/images/jornadas2026/jorge-mendez.jpg",
   },
   {
     name: "Adolfo Sequeira",
     role: "Panelista · Soberanía cultural",
     detail: "El grado cero de la cultura.",
-    accent: "Soberanía cultural",
     image: "/images/jornadas2026/adolfo-sequeira.jpg",
   },
 ];
@@ -109,6 +101,7 @@ const lightBg = "#f3f5f7";
 const lightCard = "#e8edf2";
 const text = "#0d1726";
 const muted = "#5d6878";
+const formUrl = "https://forms.monday.com/forms/3cfba4f08d33e6c17293d945aef3c056?r=use1";
 
 export default function Jornadas2026Page() {
   return (
@@ -158,10 +151,18 @@ export default function Jornadas2026Page() {
                 color: "rgba(245,248,255,0.82)",
               }}
             >
-              <a href="#sobre" style={{ color: "inherit", textDecoration: "none" }}>Sobre el evento</a>
-              <a href="#oradores" style={{ color: "inherit", textDecoration: "none" }}>Oradores</a>
-              <a href="#programa" style={{ color: "inherit", textDecoration: "none" }}>Programa</a>
-              <a href="#inscripcion" style={{ color: "inherit", textDecoration: "none" }}>Inscripción</a>
+              <a href="#sobre" style={{ color: "inherit", textDecoration: "none" }}>
+                Sobre el evento
+              </a>
+              <a href="#oradores" style={{ color: "inherit", textDecoration: "none" }}>
+                Oradores
+              </a>
+              <a href="#programa" style={{ color: "inherit", textDecoration: "none" }}>
+                Programa
+              </a>
+              <a href="#inscripcion" style={{ color: "inherit", textDecoration: "none" }}>
+                Inscripción
+              </a>
             </nav>
           </div>
 
@@ -213,18 +214,9 @@ export default function Jornadas2026Page() {
               gap: 24,
             }}
           >
-            <InfoItem
-              title="3 de septiembre"
-              text="18:00 Arg. · 15:00 Méx. · 16:00 Col."
-            />
-            <InfoItem
-              title="Universidad Nacional de Villa María"
-              text="Sede Córdoba · Finochietto 244"
-            />
-            <InfoItem
-              title="Transmisión abierta"
-              text="Para todo el mundo vía YouTube de SurLab"
-            />
+            <InfoItem title="3 de septiembre" text="18:00 Arg. · 15:00 Méx. · 16:00 Col." />
+            <InfoItem title="Universidad Nacional de Villa María" text="Sede Córdoba · Finochietto 244" />
+            <InfoItem title="Transmisión abierta" text="Para todo el mundo vía YouTube de SurLab" />
           </div>
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginTop: 38 }}>
@@ -325,10 +317,9 @@ export default function Jornadas2026Page() {
                 marginBottom: 18,
               }}
             >
-              Un orden se agota y el siguiente no termina de aparecer. En ese intervalo, la región discute
-              cuánto margen de decisión le queda frente a la geopolítica de los grandes espacios, la
-              reconfiguración de los partidos y el avance de la inteligencia artificial sobre la experiencia
-              cultural.
+              Un orden se agota y el siguiente no termina de aparecer. En ese intervalo, la región discute cuánto
+              margen de decisión le queda frente a la geopolítica de los grandes espacios, la reconfiguración de los
+              partidos y el avance de la inteligencia artificial sobre la experiencia cultural.
             </p>
             <p
               style={{
@@ -454,9 +445,7 @@ export default function Jornadas2026Page() {
                 >
                   {speaker.name}
                 </h3>
-                <p style={{ margin: "0 0 8px", color: muted, fontSize: 16, lineHeight: 1.45 }}>
-                  {speaker.role}
-                </p>
+                <p style={{ margin: "0 0 8px", color: muted, fontSize: 16, lineHeight: 1.45 }}>{speaker.role}</p>
                 <p
                   style={{
                     margin: 0,
@@ -496,7 +485,7 @@ export default function Jornadas2026Page() {
                 open={index === 1}
                 style={{
                   borderBottom: "1px solid #dde3ea",
-                  padding: "0 0 0 0",
+                  padding: 0,
                 }}
               >
                 <summary
@@ -512,7 +501,7 @@ export default function Jornadas2026Page() {
                 >
                   <span
                     style={{
-                      color: item.key === "18:00" ? "#149ea1" : "#149ea1",
+                      color: "#149ea1",
                       fontWeight: 900,
                       fontSize: 28,
                       letterSpacing: "-0.03em",
@@ -595,7 +584,7 @@ export default function Jornadas2026Page() {
             alignItems: "start",
           }}
         >
-          <div style={{ position: "sticky", top: 32 }}>
+          <div>
             <div
               style={{
                 width: 52,
@@ -645,8 +634,6 @@ export default function Jornadas2026Page() {
 
           <div
             style={{
-              position: "sticky",
-              top: 32,
               background: "#ebe7e2",
               color: text,
               borderTop: `4px solid ${teal}`,
@@ -663,22 +650,73 @@ export default function Jornadas2026Page() {
                 color: "#666d79",
               }}
             >
-              Formulario embebido · monday.com
+              Formulario de inscripción · monday.com
             </div>
+
             <div style={{ padding: 18 }}>
-              <div style={{ background: "#ebe7e2", minHeight: 640 }}>
-                <iframe
-                  src="https://forms.monday.com/forms/embed/3cfba4f08d33e6c17293d945aef3c056?r=use1"
-                  title="Formulario de inscripción de monday.com"
+              <div
+                style={{
+                  background: "#f3f0eb",
+                  border: "1px solid rgba(13, 23, 38, 0.08)",
+                  padding: 24,
+                }}
+              >
+                <h3
                   style={{
-                    width: "100%",
-                    height: "14000px",
-                    border: 0,
-                    display: "block",
-                    background: "#ebe7e2",
+                    margin: "0 0 12px",
+                    fontSize: 32,
+                    lineHeight: 1,
+                    fontWeight: 900,
+                    letterSpacing: "-0.04em",
                   }}
-                />
+                >
+                  Completá tu inscripción
+                </h3>
+                <p style={{ margin: "0 0 22px", color: muted, lineHeight: 1.65, fontSize: 16 }}>
+                  El formulario se abre en una nueva pestaña para que puedas completarlo sin scroll embebido y con una
+                  mejor experiencia de lectura.
+                </p>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                    gap: 12,
+                    marginBottom: 20,
+                  }}
+                >
+                  <FieldPreview label="Nombre" />
+                  <FieldPreview label="Apellido" />
+                  <FieldPreview label="Email" />
+                  <FieldPreview label="Cargo" />
+                  <FieldPreview label="Organización" />
+                  <FieldPreview label="País" />
+                </div>
+
+                <a
+                  href={formUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    minHeight: 50,
+                    padding: "0 22px",
+                    background: dark,
+                    color: "#ffffff",
+                    textDecoration: "none",
+                    fontWeight: 800,
+                    fontSize: 14,
+                    letterSpacing: "0.04em",
+                    textTransform: "uppercase",
+                    borderRadius: 6,
+                  }}
+                >
+                  Abrir formulario
+                </a>
               </div>
+
               <div
                 style={{
                   marginTop: 16,
@@ -714,6 +752,31 @@ function InfoItem({ title, text }: { title: string; text: string }) {
     <div style={{ display: "grid", gap: 4 }}>
       <p style={{ margin: 0, color: teal, fontSize: 15, fontWeight: 700 }}>{title}</p>
       <p style={{ margin: 0, color: "rgba(245,248,255,0.82)", lineHeight: 1.55, fontSize: 16 }}>{text}</p>
+    </div>
+  );
+}
+
+function FieldPreview({ label }: { label: string }) {
+  return (
+    <div style={{ display: "grid", gap: 6 }}>
+      <span
+        style={{
+          fontSize: 11,
+          fontWeight: 800,
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          color: "#666d79",
+        }}
+      >
+        {label}
+      </span>
+      <div
+        style={{
+          height: 44,
+          background: "#ffffff",
+          border: "1px solid rgba(13, 23, 38, 0.12)",
+        }}
+      />
     </div>
   );
 }

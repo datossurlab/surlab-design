@@ -253,9 +253,6 @@ export default function Jornadas2026Page() {
             Inscribirme
           </a>
 
-          <p className="finalCtaNote">
-            El formulario se abrirá en una nueva pestaña.
-          </p>
         </div>
       </section>
 

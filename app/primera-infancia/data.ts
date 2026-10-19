@@ -4,9 +4,8 @@
 
 export const SITE_URL = 'https://sur-lab.org/primera-infancia'
 
-// Formulario de inscripción de Monday. Es el que separa presencial / en vivo.
-export const FORM_URL = 'https://forms.monday.com/forms/3ef168523a72b993247ffe5b4f7a8435?r=use1'
-export const FORM_EMBED_URL = 'https://forms.monday.com/forms/embed/3ef168523a72b993247ffe5b4f7a8435?r=use1'
+// Formulario de inscripción de Monday. Ahí se elige presencial o en vivo.
+export const FORM_URL = 'https://forms.monday.com/forms/embed/3ef168523a72b993247ffe5b4f7a8435?r=use1'
 
 // Programa completo en PDF (pendiente). Ej.: '/infancias/programa.pdf'
 export const PROGRAM_PDF_URL = ''
@@ -60,7 +59,7 @@ export const organizers: Organizer[] = [
     description:
       'Comité argentino de la Organización Mundial para la Educación Preescolar.',
     logo: '/images/logos/omep-argentina.png',
-    logoClass: 'h-24',
+    logoClass: 'h-11',
   },
   {
     name: 'SurLab, Laboratorio de Innovación Política',

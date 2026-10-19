@@ -8,7 +8,6 @@ import {
   ExternalLink,
   Mail,
   MapPin,
-  MonitorPlay,
   Ticket,
   TrainFront,
   Users,
@@ -17,7 +16,6 @@ import {
 import {
   CONTACT_EMAIL,
   EVENT,
-  FORM_EMBED_URL,
   FORM_URL,
   MAP_EMBED_URL,
   MAP_LINK_URL,
@@ -103,14 +101,16 @@ const factIcons = {
 
 const section = 'scroll-mt-20 py-16 sm:py-24'
 const container = 'mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'
-const h2 = 'text-3xl font-black tracking-tight text-ink sm:text-4xl text-balance'
+const h2 = 'text-3xl font-medium tracking-tight text-ink sm:text-5xl text-balance'
 const lead = 'mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground'
 
 function CtaButton({ children = 'Inscribite', className = '' }: { children?: React.ReactNode; className?: string }) {
   return (
     <a
-      href="#inscripcion"
-      className={`inline-flex items-center justify-center gap-2 rounded-lg bg-sun px-6 py-3 font-bold text-ink transition-colors hover:bg-sun-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${className}`}
+      href={FORM_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-ink px-7 py-3 font-semibold text-white transition-colors hover:bg-ink-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${className}`}
     >
       {children}
       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -120,7 +120,7 @@ function CtaButton({ children = 'Inscribite', className = '' }: { children?: Rea
 
 function SignupBand({ text }: { text: string }) {
   return (
-    <aside className="bg-graphite text-white">
+    <aside className="bg-lilac text-ink">
       <div className={`${container} flex flex-col items-start gap-4 py-8 sm:flex-row sm:items-center sm:justify-between`}>
         <p className="text-lg font-semibold sm:text-xl">{text}</p>
         <CtaButton className="shrink-0" />
@@ -143,39 +143,40 @@ export default function InfanciasPage() {
         {/* 1 · Portada */}
         <section
           id="inicio"
-          className="relative scroll-mt-20 overflow-hidden bg-ink pt-28 pb-20 text-white sm:pt-36 sm:pb-28"
+          className="relative scroll-mt-20 overflow-hidden pt-28 pb-20 text-ink sm:pt-36 sm:pb-28"
+          style={{ background: 'linear-gradient(115deg, #9c9fcf 0%, #a4a8d3 38%, #c5d6df 72%, #8da7f0 100%)' }}
         >
           <div className={`${container} relative`}>
-            <p className="text-sm font-bold tracking-[0.14em] text-stone uppercase">
+            <p className="text-sm font-semibold tracking-[0.14em] text-ink/70 uppercase">
               Primera jornada · Rumbo a una Agenda Nacional de Primera Infancia 2027
             </p>
-            <h1 className="mt-5 max-w-4xl text-4xl leading-[1.05] font-black tracking-tight text-balance sm:text-6xl lg:text-7xl">
-              La primera infancia en debate: <span className="text-sun">¿qué agenda necesitamos?</span>
+            <h1 className="mt-5 max-w-4xl text-4xl leading-[1.05] font-medium tracking-tight text-balance sm:text-6xl lg:text-7xl">
+              La primera infancia en debate: ¿qué agenda necesitamos?
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink/80 sm:text-xl">
               Un encuentro para revisar lo construido en políticas de primera infancia y llegar a 2027 con compromisos
               concretos para todas las niñas y todos los niños de Argentina.
             </p>
-            <p className="mt-8 flex flex-wrap gap-x-3 gap-y-1 text-base font-semibold text-white">
+            <p className="mt-8 flex flex-wrap gap-x-3 gap-y-1 text-base font-medium text-ink">
               <span>Viernes 27 de noviembre</span>
-              <span aria-hidden className="text-white/40">·</span>
+              <span aria-hidden className="text-ink/40">·</span>
               <span>15 a 20 h</span>
-              <span aria-hidden className="text-white/40">·</span>
+              <span aria-hidden className="text-ink/40">·</span>
               <span>Aula Magna, Facultad de Derecho (UBA)</span>
-              <span aria-hidden className="text-white/40">·</span>
+              <span aria-hidden className="text-ink/40">·</span>
               <span>Presencial y en vivo por YouTube</span>
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <CtaButton>Inscribite gratis</CtaButton>
               <a
                 href="#programa"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-bold text-white transition-colors hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-full border border-ink bg-white px-7 py-3 font-semibold text-ink transition-colors hover:bg-white/70"
               >
                 Ver programa
               </a>
             </div>
-            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-white/70">
-              <span className="font-semibold text-white/90">Organizan:</span> OMEP Argentina (Organización Mundial
+            <p className="mt-10 max-w-3xl text-sm leading-relaxed text-ink/70">
+              <span className="font-semibold text-ink">Organizan:</span> OMEP Argentina (Organización Mundial
               para la Educación Preescolar) · SurLab, Laboratorio de Innovación Política · Facultad de Derecho,
               Universidad de Buenos Aires
             </p>
@@ -183,7 +184,7 @@ export default function InfanciasPage() {
         </section>
 
         {/* 2 · Datos clave */}
-        <section id="datos" aria-labelledby="datos-titulo" className="scroll-mt-20 border-b border-ink/10 bg-paper py-12">
+        <section id="datos" aria-labelledby="datos-titulo" className="scroll-mt-20 bg-mist py-12">
           <div className={container}>
             <h2 id="datos-titulo" className="sr-only">
               Datos clave
@@ -193,7 +194,7 @@ export default function InfanciasPage() {
                 const Icon = factIcons[f.icon]
                 return (
                   <div key={f.label} className="flex gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-stone/40 text-ink">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-ink">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <div>
@@ -279,13 +280,13 @@ export default function InfanciasPage() {
               </div>
             </div>
 
-            <blockquote className="my-14 border-l-4 border-sun py-2 pl-6 text-2xl leading-snug font-bold text-ink text-balance sm:text-4xl">
+            <blockquote className="my-14 border-l-4 border-peri py-2 pl-6 text-2xl leading-snug font-bold text-ink text-balance sm:text-4xl">
               ¿Qué hay que sostener de lo que ya existe y qué políticas nuevas necesitamos para garantizar la educación y
               el cuidado de todas las infancias desde el nacimiento?
             </blockquote>
 
             <div className="max-w-3xl">
-              <h3 className="text-2xl font-black text-ink">Rumbo a 2027</h3>
+              <h3 className="text-2xl font-semibold text-ink">Rumbo a 2027</h3>
               <p className="mt-4 text-lg leading-relaxed text-foreground/85">
                 Las elecciones de 2027 abren una oportunidad para que la primera infancia ocupe un lugar visible en el
                 debate público y en las propuestas de todas las fuerzas políticas, con compromisos que se puedan
@@ -298,12 +299,12 @@ export default function InfanciasPage() {
         <SignupBand text="Sumate a la conversación rumbo a 2027." />
 
         {/* 5 · Cuatro preguntas */}
-        <section id="recorrido" aria-labelledby="recorrido-titulo" className={`${section} bg-paper`}>
+        <section id="recorrido" aria-labelledby="recorrido-titulo" className={`${section} bg-teal`}>
           <div className={container}>
             <h2 id="recorrido-titulo" className={h2}>
               Un recorrido en cuatro preguntas
             </h2>
-            <p className={lead}>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink/80">
               Cada bloque de la tarde responde a una pregunta. Juntas arman un camino que empieza en el diagnóstico y
               termina en propuestas.
             </p>
@@ -314,7 +315,7 @@ export default function InfanciasPage() {
                     href={q.href}
                     className="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 transition-all hover:-translate-y-1 hover:border-graphite/40 hover:shadow-lg"
                   >
-                    <span className="text-5xl font-black text-graphite/80">{i + 1}</span>
+                    <span className="text-5xl font-medium text-ink">{i + 1}</span>
                     <span className="mt-4 text-lg leading-snug font-bold text-ink">{q.title}</span>
                     <span className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{q.text}</span>
                     <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-graphite">
@@ -342,7 +343,7 @@ export default function InfanciasPage() {
                 <a
                   href={PROGRAM_PDF_URL}
                   download
-                  className="inline-flex w-fit items-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white hover:bg-ink-soft"
+                  className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white hover:bg-ink-soft"
                 >
                   <Download className="h-4 w-4" aria-hidden />
                   Descargar programa completo (PDF)
@@ -357,7 +358,7 @@ export default function InfanciasPage() {
                   <li
                     key={row.time}
                     id={row.id}
-                    className={`grid scroll-mt-20 gap-2 py-6 md:grid-cols-[6rem_1fr_1.2fr] md:gap-8 target:bg-sun/15 ${
+                    className={`grid scroll-mt-20 gap-2 py-6 md:grid-cols-[6rem_1fr_1.2fr] md:gap-8 target:bg-lilac/20 ${
                       isBreak ? 'text-muted-foreground' : ''
                     }`}
                   >
@@ -396,7 +397,7 @@ export default function InfanciasPage() {
         </section>
 
         {/* 7 · Quienes participan */}
-        <section id="participan" aria-labelledby="participan-titulo" className={`${section} bg-paper`}>
+        <section id="participan" aria-labelledby="participan-titulo" className={`${section} bg-mist`}>
           <div className={container}>
             <h2 id="participan-titulo" className={h2}>
               Quienes participan
@@ -415,28 +416,24 @@ export default function InfanciasPage() {
         <section id="como-participar" aria-labelledby="participar-titulo" className={`${section} bg-white`}>
           <div className={container}>
             <h2 id="participar-titulo" className={h2}>
-              Dos formas de participar
+              Cómo participar
             </h2>
             <p className={lead}>
-              Elegí la modalidad al inscribirte. Según tu elección, te enviamos la confirmación de tu lugar en la sala o
-              el enlace a la transmisión por YouTube.
+              Podés venir al Aula Magna o seguir la jornada en vivo por YouTube. Elegís la modalidad al inscribirte y te
+              enviamos la confirmación de tu lugar o el enlace a la transmisión.
             </p>
 
-            <div className="mt-12 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
-              <article className="flex flex-col rounded-2xl border border-ink/10 bg-paper p-6 sm:p-8">
-                <div className="flex items-center gap-3">
-                  <Users className="h-6 w-6 text-graphite" aria-hidden />
-                  <h3 className="text-2xl font-black text-ink">Presencial</h3>
-                </div>
+            <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-2">
+              <article className="flex flex-col rounded-2xl bg-mist p-6 sm:p-8">
+                <h3 className="text-2xl font-semibold text-ink">Aula Magna, Facultad de Derecho (UBA)</h3>
                 <p className="mt-4 leading-relaxed text-foreground/85">
-                  Te esperamos en el Aula Magna de la Facultad de Derecho de la UBA, en Av. Figueroa Alcorta 2263,
-                  Ciudad de Buenos Aires. La acreditación y el café empiezan a las 14:30 h.
+                  Av. Figueroa Alcorta 2263, Ciudad de Buenos Aires. La acreditación y el café empiezan a las 14:30 h.
                 </p>
                 <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/85">
                   <li className="flex gap-3">
                     <Users className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>
-                      <strong className="text-ink">Cupo:</strong> 250 personas
+                      <strong className="text-ink">Cupo presencial:</strong> 250 personas
                     </span>
                   </li>
                   <li className="flex gap-3">
@@ -450,11 +447,35 @@ export default function InfanciasPage() {
                     <Bus className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>Colectivos: 17, 61, 67, 92, 93, 110 y 130 (el 92 te deja prácticamente en la puerta).</span>
                   </li>
+                  <li className="flex gap-3">
+                    <Video className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
+                    <span>
+                      <strong className="text-ink">En vivo:</strong> la jornada completa se transmite por YouTube y el
+                      video queda disponible en el mismo canal.
+                    </span>
+                  </li>
                 </ul>
-                <div className="mt-6 overflow-hidden rounded-xl border border-ink/10">
+                {YOUTUBE_URL && (
+                  <a
+                    href={YOUTUBE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex w-fit items-center gap-1 text-sm font-semibold text-graphite hover:underline"
+                  >
+                    Ir al canal de YouTube
+                    <ExternalLink className="h-3.5 w-3.5" aria-hidden />
+                  </a>
+                )}
+                <div className="mt-auto pt-8">
+                  <CtaButton />
+                </div>
+              </article>
+
+              <div className="flex flex-col">
+                <div className="overflow-hidden rounded-2xl bg-mist">
                   <iframe
                     src={MAP_EMBED_URL}
-                    className="h-[200px] w-full md:h-[320px]"
+                    className="h-[240px] w-full md:h-[420px] lg:h-full lg:min-h-[420px]"
                     style={{ border: 0 }}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -470,91 +491,34 @@ export default function InfanciasPage() {
                   Abrir en Google Maps
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                 </a>
-              </article>
-
-              <article className="flex flex-col rounded-2xl border border-ink/10 bg-stone/25 p-6 sm:p-8">
-                <div className="flex items-center gap-3">
-                  <MonitorPlay className="h-6 w-6 text-graphite" aria-hidden />
-                  <h3 className="text-2xl font-black text-ink">En vivo por YouTube</h3>
-                </div>
-                <p className="mt-4 leading-relaxed text-foreground/85">Seguí la jornada completa por YouTube, desde donde estés.</p>
-                <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/85">
-                  <li className="flex gap-3">
-                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
-                    <span>Con la inscripción te enviamos el enlace a la transmisión.</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <Video className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
-                    <span>El video queda disponible en el mismo canal.</span>
-                  </li>
-                </ul>
-                {YOUTUBE_URL && (
-                  <a
-                    href={YOUTUBE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-fit items-center gap-1 text-sm font-semibold text-graphite hover:underline"
-                  >
-                    Ir al canal de YouTube
-                    <ExternalLink className="h-3.5 w-3.5" aria-hidden />
-                  </a>
-                )}
-                <div className="mt-auto pt-8">
-                  <CtaButton />
-                </div>
-              </article>
+              </div>
             </div>
           </div>
         </section>
 
         {/* 9 · Inscripción */}
-        <section id="inscripcion" aria-labelledby="inscripcion-titulo" className={`${section} bg-ink text-white`}>
+        <section id="inscripcion" aria-labelledby="inscripcion-titulo" className={`${section} bg-mist`}>
           <div className={`${container} max-w-4xl`}>
-            <h2 id="inscripcion-titulo" className="text-3xl font-black tracking-tight sm:text-4xl">
+            <h2 id="inscripcion-titulo" className={h2}>
               Inscribite a la jornada
             </h2>
-            <p className="mt-4 text-lg leading-relaxed text-white/80">
-              Completá el formulario para participar en el Aula Magna o seguir la transmisión en vivo. Son pocos datos y
-              te lleva unos minutos.
+            <p className={lead}>
+              Completá el formulario para participar en el Aula Magna o seguir la transmisión en vivo. Ahí elegís la
+              modalidad. Son pocos datos y te lleva unos minutos.
             </p>
-
-            {FORM_URL ? (
-              <>
-                <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl bg-white shadow-[5px_5px_56px_0_rgba(0,0,0,0.25)]">
-                  <iframe
-                    src={FORM_EMBED_URL}
-                    title="Formulario de inscripción a la jornada"
-                    className="h-[1100px] w-full sm:h-[900px]"
-                    style={{ border: 0 }}
-                  />
-                </div>
-                <p className="mt-4 text-sm text-white/70">
-                  Al enviarlo, te llega un correo de confirmación con los datos de la jornada.
-                </p>
-                <p className="mt-2 text-sm text-white/70">
-                  ¿No ves el formulario?{' '}
-                  <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-stone underline">
-                    Abrilo en una pestaña nueva
-                  </a>
-                  .
-                </p>
-              </>
-            ) : (
-              <div className="mt-10 rounded-2xl border border-white/20 bg-white/5 p-8">
-                <p className="text-lg font-semibold">El formulario de inscripción se habilita en los próximos días.</p>
-                <p className="mt-2 text-white/75">
-                  Mientras tanto, podés escribirnos a{' '}
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-stone underline">
-                    {CONTACT_EMAIL}
-                  </a>
-                  .
-                </p>
-              </div>
-            )}
-
-            <p className="mt-6 text-sm text-white/60">
-              <strong className="text-white/80">Privacidad:</strong> usamos tus datos solo para organizar tu
-              participación y avisarte sobre los próximos encuentros de la serie.
+            <div className="mt-10">
+              <CtaButton className="px-8 py-4 text-lg">Ir al formulario de inscripción</CtaButton>
+            </div>
+            <p className="mt-4 text-sm text-ink/70">
+              Se abre en una pestaña nueva. Al enviarlo, te llega un correo de confirmación con los datos de la jornada.
+            </p>
+            <p className="mt-6 text-sm text-ink/70">
+              <strong className="text-ink">Privacidad:</strong> usamos tus datos solo para organizar tu participación y
+              avisarte sobre los próximos encuentros de la serie. Consultas:{' '}
+              <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-graphite underline">
+                {CONTACT_EMAIL}
+              </a>
+              .
             </p>
           </div>
         </section>

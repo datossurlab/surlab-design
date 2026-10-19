@@ -2,7 +2,7 @@
 // Los datos pendientes del documento de contenidos quedan vacíos: la página
 // oculta el elemento correspondiente hasta que se completen.
 
-export const SITE_URL = 'https://sur-lab.org/infancias'
+export const SITE_URL = 'https://sur-lab.org/primera-infancia'
 
 // Enlace directo al formulario de Monday (pendiente). Mientras esté vacío,
 // la sección de inscripción muestra un aviso con el correo de contacto.

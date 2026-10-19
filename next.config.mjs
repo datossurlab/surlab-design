@@ -8,7 +8,7 @@ const nextConfig = {
   },
   async redirects() {
     return [
-      { source: '/primera-infancia', destination: '/infancias', permanent: true },
+      { source: '/infancias', destination: '/primera-infancia', permanent: true },
     ]
   },
 }

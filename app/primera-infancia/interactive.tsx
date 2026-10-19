@@ -16,7 +16,7 @@ export function EventHeader() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-[#00143f]/95 shadow-lg shadow-black/10 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 bg-ink/95 shadow-lg shadow-black/10 backdrop-blur">
       <nav aria-label="Secciones de la jornada" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
           <a href="#inicio" className="text-sm font-bold tracking-tight text-white sm:text-base">
@@ -35,7 +35,7 @@ export function EventHeader() {
             ))}
             <a
               href="#inscripcion"
-              className="ml-2 rounded-md bg-yellow px-4 py-2 text-sm font-bold text-navy transition-colors hover:bg-yellow-dark"
+              className="ml-2 rounded-md bg-sun px-4 py-2 text-sm font-bold text-ink transition-colors hover:bg-sun-dark"
             >
               Inscribite
             </a>
@@ -68,7 +68,7 @@ export function EventHeader() {
             <a
               href="#inscripcion"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-md bg-yellow px-3 py-2.5 text-center text-sm font-bold text-navy"
+              className="mt-2 rounded-md bg-sun px-3 py-2.5 text-center text-sm font-bold text-ink"
             >
               Inscribite
             </a>
@@ -96,7 +96,7 @@ export function MobileStickyCta() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-navy/10 bg-white/95 p-3 backdrop-blur transition-transform duration-300 md:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-ink/10 bg-white/95 p-3 backdrop-blur transition-transform duration-300 md:hidden ${
         hidden ? 'translate-y-full' : 'translate-y-0'
       }`}
       aria-hidden={hidden}
@@ -104,7 +104,7 @@ export function MobileStickyCta() {
       <a
         href="#inscripcion"
         tabIndex={hidden ? -1 : 0}
-        className="block rounded-lg bg-navy py-3 text-center font-bold text-white"
+        className="block rounded-lg bg-ink py-3 text-center font-bold text-white"
       >
         Inscribite
       </a>
@@ -183,7 +183,7 @@ export function AddToCalendar() {
     setOpen(false)
   }
 
-  const item = 'block w-full px-4 py-2.5 text-left text-sm text-navy hover:bg-navy/5'
+  const item = 'block w-full px-4 py-2.5 text-left text-sm text-ink hover:bg-ink/5'
 
   return (
     <div ref={ref} className="relative inline-block">
@@ -192,7 +192,7 @@ export function AddToCalendar() {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="inline-flex items-center gap-2 rounded-lg border border-navy/20 bg-white px-5 py-3 text-sm font-bold text-navy transition-colors hover:border-navy/40"
+        className="inline-flex items-center gap-2 rounded-lg border border-ink/20 bg-white px-5 py-3 text-sm font-bold text-ink transition-colors hover:border-ink/40"
       >
         <CalendarPlus className="h-4 w-4" />
         Agregar a mi calendario
@@ -253,8 +253,8 @@ export function SpeakersGrid() {
             aria-pressed={filter === f}
             className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-colors ${
               filter === f
-                ? 'border-navy bg-navy text-white'
-                : 'border-navy/15 bg-white text-navy hover:border-navy/40'
+                ? 'border-ink bg-ink text-white'
+                : 'border-ink/15 bg-white text-ink hover:border-ink/40'
             }`}
           >
             {f}
@@ -267,7 +267,7 @@ export function SpeakersGrid() {
           <li
             key={s.id}
             id={s.id}
-            className="flex scroll-mt-24 gap-4 rounded-xl border border-navy/10 bg-white p-4 target:ring-2 target:ring-purple"
+            className="flex scroll-mt-24 gap-4 rounded-xl border border-ink/10 bg-white p-4 target:ring-2 target:ring-graphite"
           >
             {s.photo ? (
               <img
@@ -280,34 +280,34 @@ export function SpeakersGrid() {
               <span
                 aria-hidden
                 className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-lg text-lg font-bold ${
-                  s.institutional ? 'bg-navy/5 text-navy/60' : 'bg-mint/40 text-navy'
+                  s.institutional ? 'bg-ink/5 text-ink/60' : 'bg-stone/40 text-ink'
                 }`}
               >
                 {initials(s.name)}
               </span>
             )}
             <div className="min-w-0">
-              <h3 className="font-bold leading-tight text-navy">{s.name}</h3>
+              <h3 className="font-bold leading-tight text-ink">{s.name}</h3>
               {s.role && <p className="mt-1 text-sm leading-snug text-muted-foreground">{s.role}</p>}
               <p className="mt-2 flex flex-wrap gap-1.5">
                 {s.blocks.map((b) => (
                   <a
                     key={b}
                     href={blockAnchors[b]}
-                    className="rounded-full bg-purple/10 px-2 py-0.5 text-xs font-semibold text-purple hover:bg-purple/20"
+                    className="rounded-full bg-graphite/10 px-2 py-0.5 text-xs font-semibold text-graphite hover:bg-graphite/20"
                   >
                     {b}
                   </a>
                 ))}
                 {s.coordinates && (
-                  <span className="rounded-full bg-yellow/40 px-2 py-0.5 text-xs font-semibold text-navy">
+                  <span className="rounded-full bg-sun/40 px-2 py-0.5 text-xs font-semibold text-ink">
                     Coordina
                   </span>
                 )}
               </p>
               {s.bio && (
                 <details className="mt-2 text-sm text-muted-foreground">
-                  <summary className="cursor-pointer font-semibold text-navy">Ver más</summary>
+                  <summary className="cursor-pointer font-semibold text-ink">Ver más</summary>
                   <p className="mt-1">{s.bio}</p>
                 </details>
               )}
@@ -323,7 +323,7 @@ export function Faq() {
   const [open, setOpen] = useState<number | null>(null)
 
   return (
-    <div className="divide-y divide-navy/10 border-y border-navy/10">
+    <div className="divide-y divide-ink/10 border-y border-ink/10">
       {faqs.map((f, i) => {
         const isOpen = open === i
         return (
@@ -335,12 +335,12 @@ export function Faq() {
                 aria-expanded={isOpen}
                 aria-controls={`faq-a-${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-semibold text-navy"
+                className="flex w-full items-center justify-between gap-4 py-5 text-left text-lg font-semibold text-ink"
               >
                 {f.q}
                 <ChevronDown
                   aria-hidden
-                  className={`h-5 w-5 shrink-0 text-navy/50 transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                  className={`h-5 w-5 shrink-0 text-ink/50 transition-transform ${isOpen ? 'rotate-180' : ''}`}
                 />
               </button>
             </h3>

@@ -87,7 +87,7 @@ const jsonLd = {
     price: 0,
     priceCurrency: 'ARS',
     availability: 'https://schema.org/InStock',
-    url: `${SITE_URL}#inscripcion`,
+    url: FORM_URL,
   },
 }
 
@@ -467,7 +467,16 @@ export default function InfanciasPage() {
                   </a>
                 )}
                 <div className="mt-auto pt-8">
-                  <CtaButton />
+                  <CtaButton>Inscribite al formulario</CtaButton>
+                  <p className="mt-4 text-xs leading-relaxed text-ink/70">
+                    Se abre en una pestaña nueva, donde elegís si participás de forma presencial o en vivo. Al enviarlo,
+                    te llega un correo de confirmación. Usamos tus datos solo para organizar tu participación y avisarte
+                    sobre los próximos encuentros. Consultas:{' '}
+                    <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-graphite underline">
+                      {CONTACT_EMAIL}
+                    </a>
+                    .
+                  </p>
                 </div>
               </article>
 
@@ -493,33 +502,6 @@ export default function InfanciasPage() {
                 </a>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* 9 · Inscripción */}
-        <section id="inscripcion" aria-labelledby="inscripcion-titulo" className={`${section} bg-mist`}>
-          <div className={`${container} max-w-4xl`}>
-            <h2 id="inscripcion-titulo" className={h2}>
-              Inscribite a la jornada
-            </h2>
-            <p className={lead}>
-              Completá el formulario para participar en el Aula Magna o seguir la transmisión en vivo. Ahí elegís la
-              modalidad. Son pocos datos y te lleva unos minutos.
-            </p>
-            <div className="mt-10">
-              <CtaButton className="px-8 py-4 text-lg">Ir al formulario de inscripción</CtaButton>
-            </div>
-            <p className="mt-4 text-sm text-ink/70">
-              Se abre en una pestaña nueva. Al enviarlo, te llega un correo de confirmación con los datos de la jornada.
-            </p>
-            <p className="mt-6 text-sm text-ink/70">
-              <strong className="text-ink">Privacidad:</strong> usamos tus datos solo para organizar tu participación y
-              avisarte sobre los próximos encuentros de la serie. Consultas:{' '}
-              <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-graphite underline">
-                {CONTACT_EMAIL}
-              </a>
-              .
-            </p>
           </div>
         </section>
 

@@ -84,12 +84,12 @@ export function EventHeader() {
   )
 }
 
-// Botón fijo inferior en celulares; se oculta al llegar a #inscripcion.
+// Botón fijo inferior en celulares; se oculta al llegar a #como-participar.
 export function MobileStickyCta() {
   const [hidden, setHidden] = useState(false)
 
   useEffect(() => {
-    const target = document.getElementById('inscripcion')
+    const target = document.getElementById('como-participar')
     if (!target) return
     const observer = new IntersectionObserver(
       ([entry]) => setHidden(entry.isIntersecting || entry.boundingClientRect.top < 0),

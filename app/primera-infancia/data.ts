@@ -4,9 +4,9 @@
 
 export const SITE_URL = 'https://sur-lab.org/primera-infancia'
 
-// Enlace directo al formulario de Monday (pendiente). Mientras esté vacío,
-// la sección de inscripción muestra un aviso con el correo de contacto.
-export const FORM_URL = ''
+// Formulario de inscripción de Monday. Es el que separa presencial / en vivo.
+export const FORM_URL = 'https://forms.monday.com/forms/3ef168523a72b993247ffe5b4f7a8435?r=use1'
+export const FORM_EMBED_URL = 'https://forms.monday.com/forms/embed/3ef168523a72b993247ffe5b4f7a8435?r=use1'
 
 // Programa completo en PDF (pendiente). Ej.: '/infancias/programa.pdf'
 export const PROGRAM_PDF_URL = ''
@@ -46,36 +46,38 @@ export const navItems = [
 export type Organizer = {
   name: string
   short: string
-  // Sigla para el marcador provisorio mientras no esté el logo
-  mark: string
   description: string
   href?: string
-  logo?: string
+  logo: string
+  // Altura del logo en la tarjeta (los tres tienen proporciones muy distintas)
+  logoClass: string
 }
 
 export const organizers: Organizer[] = [
   {
     name: 'OMEP Argentina',
     short: 'OMEP Argentina',
-    mark: 'OMEP',
     description:
       'Comité argentino de la Organización Mundial para la Educación Preescolar.',
+    logo: '/images/logos/omep-argentina.png',
+    logoClass: 'h-24',
   },
   {
     name: 'SurLab, Laboratorio de Innovación Política',
     short: 'SurLab',
-    mark: 'SL',
     description:
       'Diseña políticas públicas junto a gobiernos, universidades, empresas y comunidades, con base en Córdoba y mirada en América Latina y el Caribe.',
     href: '/',
-    logo: '/surlab-icon.png',
+    logo: '/images/logos/surlab.png',
+    logoClass: 'h-16',
   },
   {
     name: 'Facultad de Derecho, Universidad de Buenos Aires',
     short: 'Derecho UBA',
-    mark: 'UBA',
     description: '',
     href: 'https://www.derecho.uba.ar',
+    logo: '/images/logos/uba-derecho.png',
+    logoClass: 'h-11',
   },
 ]
 

@@ -17,6 +17,7 @@ import {
 import {
   CONTACT_EMAIL,
   EVENT,
+  FORM_EMBED_URL,
   FORM_URL,
   MAP_EMBED_URL,
   MAP_LINK_URL,
@@ -34,7 +35,6 @@ import {
   EventHeader,
   Faq,
   MobileStickyCta,
-  OrganizerLogo,
   SpeakersGrid,
 } from './interactive'
 
@@ -103,14 +103,14 @@ const factIcons = {
 
 const section = 'scroll-mt-20 py-16 sm:py-24'
 const container = 'mx-auto max-w-6xl px-4 sm:px-6 lg:px-8'
-const h2 = 'text-3xl font-black tracking-tight text-navy sm:text-4xl text-balance'
+const h2 = 'text-3xl font-black tracking-tight text-ink sm:text-4xl text-balance'
 const lead = 'mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground'
 
 function CtaButton({ children = 'Inscribite', className = '' }: { children?: React.ReactNode; className?: string }) {
   return (
     <a
       href="#inscripcion"
-      className={`inline-flex items-center justify-center gap-2 rounded-lg bg-yellow px-6 py-3 font-bold text-navy transition-colors hover:bg-yellow-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-lg bg-sun px-6 py-3 font-bold text-ink transition-colors hover:bg-sun-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink ${className}`}
     >
       {children}
       <ArrowRight className="h-4 w-4" aria-hidden />
@@ -120,7 +120,7 @@ function CtaButton({ children = 'Inscribite', className = '' }: { children?: Rea
 
 function SignupBand({ text }: { text: string }) {
   return (
-    <aside className="bg-purple text-white">
+    <aside className="bg-graphite text-white">
       <div className={`${container} flex flex-col items-start gap-4 py-8 sm:flex-row sm:items-center sm:justify-between`}>
         <p className="text-lg font-semibold sm:text-xl">{text}</p>
         <CtaButton className="shrink-0" />
@@ -131,7 +131,7 @@ function SignupBand({ text }: { text: string }) {
 
 export default function InfanciasPage() {
   return (
-    <>
+    <div>
       <style>{`
         @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
       `}</style>
@@ -143,30 +143,14 @@ export default function InfanciasPage() {
         {/* 1 · Portada */}
         <section
           id="inicio"
-          className="relative scroll-mt-20 overflow-hidden bg-[#00143f] pt-28 pb-20 text-white sm:pt-36 sm:pb-28"
+          className="relative scroll-mt-20 overflow-hidden bg-ink pt-28 pb-20 text-white sm:pt-36 sm:pb-28"
         >
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 opacity-60"
-            style={{
-              background:
-                'radial-gradient(60% 50% at 85% 10%, oklch(0.45 0.18 290 / 0.55), transparent 70%), radial-gradient(45% 45% at 10% 100%, oklch(0.82 0.1 175 / 0.35), transparent 70%)',
-            }}
-          />
           <div className={`${container} relative`}>
-            <ul className="mb-10 flex flex-wrap items-center gap-x-8 gap-y-4" aria-label="Organizan">
-              {organizers.map((org) => (
-                <li key={org.short}>
-                  <OrganizerLogo org={org} size="md" />
-                </li>
-              ))}
-            </ul>
-
-            <p className="text-sm font-bold tracking-[0.14em] text-mint uppercase">
+            <p className="text-sm font-bold tracking-[0.14em] text-stone uppercase">
               Primera jornada · Rumbo a una Agenda Nacional de Primera Infancia 2027
             </p>
             <h1 className="mt-5 max-w-4xl text-4xl leading-[1.05] font-black tracking-tight text-balance sm:text-6xl lg:text-7xl">
-              La primera infancia en debate: <span className="text-yellow">¿qué agenda necesitamos?</span>
+              La primera infancia en debate: <span className="text-sun">¿qué agenda necesitamos?</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
               Un encuentro para revisar lo construido en políticas de primera infancia y llegar a 2027 con compromisos
@@ -199,7 +183,7 @@ export default function InfanciasPage() {
         </section>
 
         {/* 2 · Datos clave */}
-        <section id="datos" aria-labelledby="datos-titulo" className="scroll-mt-20 border-b border-navy/10 bg-cream py-12">
+        <section id="datos" aria-labelledby="datos-titulo" className="scroll-mt-20 border-b border-ink/10 bg-paper py-12">
           <div className={container}>
             <h2 id="datos-titulo" className="sr-only">
               Datos clave
@@ -209,12 +193,12 @@ export default function InfanciasPage() {
                 const Icon = factIcons[f.icon]
                 return (
                   <div key={f.label} className="flex gap-3">
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-mint/40 text-navy">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-stone/40 text-ink">
                       <Icon className="h-5 w-5" aria-hidden />
                     </span>
                     <div>
-                      <dt className="text-xs font-bold tracking-wider text-navy/60 uppercase">{f.label}</dt>
-                      <dd className="mt-1 text-sm leading-snug text-navy">{f.text}</dd>
+                      <dt className="text-xs font-bold tracking-wider text-ink/60 uppercase">{f.label}</dt>
+                      <dd className="mt-1 text-sm leading-snug text-ink">{f.text}</dd>
                     </div>
                   </div>
                 )
@@ -227,28 +211,31 @@ export default function InfanciasPage() {
         </section>
 
         {/* 3 · Organizan */}
-        <section id="organizan" aria-labelledby="organizan-titulo" className="scroll-mt-20 bg-white py-16">
+        <section id="organizan" aria-labelledby="organizan-titulo" className="scroll-mt-20 bg-paper py-16">
           <div className={container}>
             <h2 id="organizan-titulo" className={h2}>
               Organizan
             </h2>
             <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
               {organizers.map((org) => (
-                <li key={org.short} className="flex flex-col gap-4 rounded-2xl border border-navy/10 bg-cream p-6">
+                <li key={org.short} className="flex flex-col gap-5 rounded-2xl border border-ink/10 bg-white p-6">
                   {org.href ? (
                     <a
                       href={org.href}
                       target={org.href.startsWith('http') ? '_blank' : undefined}
                       rel={org.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="w-fit"
+                      className="flex h-24 items-center"
+                      aria-label={org.name}
                     >
-                      <OrganizerLogo org={org} tone="dark" size="lg" />
+                      <img src={org.logo} alt={`Logo de ${org.name}`} className={`${org.logoClass} w-auto max-w-full object-contain object-left`} />
                     </a>
                   ) : (
-                    <OrganizerLogo org={org} tone="dark" size="lg" />
+                    <span className="flex h-24 items-center">
+                      <img src={org.logo} alt={`Logo de ${org.name}`} className={`${org.logoClass} w-auto max-w-full object-contain object-left`} />
+                    </span>
                   )}
                   <div>
-                    <h3 className="font-bold text-navy">{org.name}</h3>
+                    <h3 className="font-bold text-ink">{org.name}</h3>
                     {org.description && (
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{org.description}</p>
                     )}
@@ -292,13 +279,13 @@ export default function InfanciasPage() {
               </div>
             </div>
 
-            <blockquote className="my-14 border-l-4 border-yellow py-2 pl-6 text-2xl leading-snug font-bold text-navy text-balance sm:text-4xl">
+            <blockquote className="my-14 border-l-4 border-sun py-2 pl-6 text-2xl leading-snug font-bold text-ink text-balance sm:text-4xl">
               ¿Qué hay que sostener de lo que ya existe y qué políticas nuevas necesitamos para garantizar la educación y
               el cuidado de todas las infancias desde el nacimiento?
             </blockquote>
 
             <div className="max-w-3xl">
-              <h3 className="text-2xl font-black text-navy">Rumbo a 2027</h3>
+              <h3 className="text-2xl font-black text-ink">Rumbo a 2027</h3>
               <p className="mt-4 text-lg leading-relaxed text-foreground/85">
                 Las elecciones de 2027 abren una oportunidad para que la primera infancia ocupe un lugar visible en el
                 debate público y en las propuestas de todas las fuerzas políticas, con compromisos que se puedan
@@ -311,7 +298,7 @@ export default function InfanciasPage() {
         <SignupBand text="Sumate a la conversación rumbo a 2027." />
 
         {/* 5 · Cuatro preguntas */}
-        <section id="recorrido" aria-labelledby="recorrido-titulo" className={`${section} bg-cream`}>
+        <section id="recorrido" aria-labelledby="recorrido-titulo" className={`${section} bg-paper`}>
           <div className={container}>
             <h2 id="recorrido-titulo" className={h2}>
               Un recorrido en cuatro preguntas
@@ -325,12 +312,12 @@ export default function InfanciasPage() {
                 <li key={q.href}>
                   <a
                     href={q.href}
-                    className="group flex h-full flex-col rounded-2xl border border-navy/10 bg-white p-6 transition-all hover:-translate-y-1 hover:border-purple/40 hover:shadow-lg"
+                    className="group flex h-full flex-col rounded-2xl border border-ink/10 bg-white p-6 transition-all hover:-translate-y-1 hover:border-graphite/40 hover:shadow-lg"
                   >
-                    <span className="text-5xl font-black text-purple/80">{i + 1}</span>
-                    <span className="mt-4 text-lg leading-snug font-bold text-navy">{q.title}</span>
+                    <span className="text-5xl font-black text-graphite/80">{i + 1}</span>
+                    <span className="mt-4 text-lg leading-snug font-bold text-ink">{q.title}</span>
                     <span className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{q.text}</span>
-                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-purple">
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-graphite">
                       {q.block}
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden />
                     </span>
@@ -355,7 +342,7 @@ export default function InfanciasPage() {
                 <a
                   href={PROGRAM_PDF_URL}
                   download
-                  className="inline-flex w-fit items-center gap-2 rounded-lg bg-navy px-5 py-3 text-sm font-bold text-white hover:bg-navy-light"
+                  className="inline-flex w-fit items-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white hover:bg-ink-soft"
                 >
                   <Download className="h-4 w-4" aria-hidden />
                   Descargar programa completo (PDF)
@@ -363,23 +350,23 @@ export default function InfanciasPage() {
               )}
             </div>
 
-            <ol className="mt-10 divide-y divide-navy/10 border-y border-navy/10">
+            <ol className="mt-10 divide-y divide-ink/10 border-y border-ink/10">
               {program.map((row) => {
                 const isBreak = !row.label
                 return (
                   <li
                     key={row.time}
                     id={row.id}
-                    className={`grid scroll-mt-20 gap-2 py-6 md:grid-cols-[6rem_1fr_1.2fr] md:gap-8 target:bg-yellow/15 ${
+                    className={`grid scroll-mt-20 gap-2 py-6 md:grid-cols-[6rem_1fr_1.2fr] md:gap-8 target:bg-sun/15 ${
                       isBreak ? 'text-muted-foreground' : ''
                     }`}
                   >
-                    <span className="font-mono text-lg font-bold text-navy/70">{row.time}</span>
+                    <span className="font-mono text-lg font-bold text-ink/70">{row.time}</span>
                     <div>
                       {row.label && (
-                        <span className="text-xs font-bold tracking-wider text-purple uppercase">{row.label}</span>
+                        <span className="text-xs font-bold tracking-wider text-graphite uppercase">{row.label}</span>
                       )}
-                      <h3 className={isBreak ? 'text-base' : 'text-lg leading-snug font-bold text-navy'}>{row.title}</h3>
+                      <h3 className={isBreak ? 'text-base' : 'text-lg leading-snug font-bold text-ink'}>{row.title}</h3>
                     </div>
                     {!isBreak && (
                       <p className="text-sm leading-relaxed text-foreground/80">
@@ -409,7 +396,7 @@ export default function InfanciasPage() {
         </section>
 
         {/* 7 · Quienes participan */}
-        <section id="participan" aria-labelledby="participan-titulo" className={`${section} bg-cream`}>
+        <section id="participan" aria-labelledby="participan-titulo" className={`${section} bg-paper`}>
           <div className={container}>
             <h2 id="participan-titulo" className={h2}>
               Quienes participan
@@ -436,10 +423,10 @@ export default function InfanciasPage() {
             </p>
 
             <div className="mt-12 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
-              <article className="flex flex-col rounded-2xl border border-navy/10 bg-cream p-6 sm:p-8">
+              <article className="flex flex-col rounded-2xl border border-ink/10 bg-paper p-6 sm:p-8">
                 <div className="flex items-center gap-3">
-                  <Users className="h-6 w-6 text-purple" aria-hidden />
-                  <h3 className="text-2xl font-black text-navy">Presencial</h3>
+                  <Users className="h-6 w-6 text-graphite" aria-hidden />
+                  <h3 className="text-2xl font-black text-ink">Presencial</h3>
                 </div>
                 <p className="mt-4 leading-relaxed text-foreground/85">
                   Te esperamos en el Aula Magna de la Facultad de Derecho de la UBA, en Av. Figueroa Alcorta 2263,
@@ -447,24 +434,24 @@ export default function InfanciasPage() {
                 </p>
                 <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/85">
                   <li className="flex gap-3">
-                    <Users className="mt-0.5 h-4 w-4 shrink-0 text-navy/60" aria-hidden />
+                    <Users className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>
-                      <strong className="text-navy">Cupo:</strong> 250 personas
+                      <strong className="text-ink">Cupo:</strong> 250 personas
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <TrainFront className="mt-0.5 h-4 w-4 shrink-0 text-navy/60" aria-hidden />
+                    <TrainFront className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>
-                      <strong className="text-navy">Cómo llegar:</strong> Subte línea H, estación Facultad de
+                      <strong className="text-ink">Cómo llegar:</strong> Subte línea H, estación Facultad de
                       Derecho-Julieta Lanteri, en la puerta de la Facultad.
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <Bus className="mt-0.5 h-4 w-4 shrink-0 text-navy/60" aria-hidden />
+                    <Bus className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>Colectivos: 17, 61, 67, 92, 93, 110 y 130 (el 92 te deja prácticamente en la puerta).</span>
                   </li>
                 </ul>
-                <div className="mt-6 overflow-hidden rounded-xl border border-navy/10">
+                <div className="mt-6 overflow-hidden rounded-xl border border-ink/10">
                   <iframe
                     src={MAP_EMBED_URL}
                     className="h-[200px] w-full md:h-[320px]"
@@ -478,26 +465,26 @@ export default function InfanciasPage() {
                   href={MAP_LINK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex w-fit items-center gap-1 text-sm font-semibold text-purple hover:underline"
+                  className="mt-3 inline-flex w-fit items-center gap-1 text-sm font-semibold text-graphite hover:underline"
                 >
                   Abrir en Google Maps
                   <ExternalLink className="h-3.5 w-3.5" aria-hidden />
                 </a>
               </article>
 
-              <article className="flex flex-col rounded-2xl border border-navy/10 bg-mint/25 p-6 sm:p-8">
+              <article className="flex flex-col rounded-2xl border border-ink/10 bg-stone/25 p-6 sm:p-8">
                 <div className="flex items-center gap-3">
-                  <MonitorPlay className="h-6 w-6 text-purple" aria-hidden />
-                  <h3 className="text-2xl font-black text-navy">En vivo por YouTube</h3>
+                  <MonitorPlay className="h-6 w-6 text-graphite" aria-hidden />
+                  <h3 className="text-2xl font-black text-ink">En vivo por YouTube</h3>
                 </div>
                 <p className="mt-4 leading-relaxed text-foreground/85">Seguí la jornada completa por YouTube, desde donde estés.</p>
                 <ul className="mt-5 space-y-3 text-sm leading-relaxed text-foreground/85">
                   <li className="flex gap-3">
-                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-navy/60" aria-hidden />
+                    <Mail className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>Con la inscripción te enviamos el enlace a la transmisión.</span>
                   </li>
                   <li className="flex gap-3">
-                    <Video className="mt-0.5 h-4 w-4 shrink-0 text-navy/60" aria-hidden />
+                    <Video className="mt-0.5 h-4 w-4 shrink-0 text-ink/60" aria-hidden />
                     <span>El video queda disponible en el mismo canal.</span>
                   </li>
                 </ul>
@@ -506,7 +493,7 @@ export default function InfanciasPage() {
                     href={YOUTUBE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-6 inline-flex w-fit items-center gap-1 text-sm font-semibold text-purple hover:underline"
+                    className="mt-6 inline-flex w-fit items-center gap-1 text-sm font-semibold text-graphite hover:underline"
                   >
                     Ir al canal de YouTube
                     <ExternalLink className="h-3.5 w-3.5" aria-hidden />
@@ -521,7 +508,7 @@ export default function InfanciasPage() {
         </section>
 
         {/* 9 · Inscripción */}
-        <section id="inscripcion" aria-labelledby="inscripcion-titulo" className={`${section} bg-[#00143f] text-white`}>
+        <section id="inscripcion" aria-labelledby="inscripcion-titulo" className={`${section} bg-ink text-white`}>
           <div className={`${container} max-w-4xl`}>
             <h2 id="inscripcion-titulo" className="text-3xl font-black tracking-tight sm:text-4xl">
               Inscribite a la jornada
@@ -533,11 +520,11 @@ export default function InfanciasPage() {
 
             {FORM_URL ? (
               <>
-                <div className="mt-10 overflow-hidden rounded-2xl bg-white">
+                <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl bg-white shadow-[5px_5px_56px_0_rgba(0,0,0,0.25)]">
                   <iframe
-                    src={FORM_URL}
+                    src={FORM_EMBED_URL}
                     title="Formulario de inscripción a la jornada"
-                    className="h-[1400px] w-full sm:h-[1200px]"
+                    className="h-[1100px] w-full sm:h-[900px]"
                     style={{ border: 0 }}
                   />
                 </div>
@@ -546,7 +533,7 @@ export default function InfanciasPage() {
                 </p>
                 <p className="mt-2 text-sm text-white/70">
                   ¿No ves el formulario?{' '}
-                  <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-mint underline">
+                  <a href={FORM_URL} target="_blank" rel="noopener noreferrer" className="font-semibold text-stone underline">
                     Abrilo en una pestaña nueva
                   </a>
                   .
@@ -557,7 +544,7 @@ export default function InfanciasPage() {
                 <p className="text-lg font-semibold">El formulario de inscripción se habilita en los próximos días.</p>
                 <p className="mt-2 text-white/75">
                   Mientras tanto, podés escribirnos a{' '}
-                  <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-mint underline">
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-stone underline">
                     {CONTACT_EMAIL}
                   </a>
                   .
@@ -584,17 +571,9 @@ export default function InfanciasPage() {
       </main>
 
       {/* Pie */}
-      <footer className="bg-[#00143f] pb-28 text-white md:pb-0">
+      <footer className="bg-ink pb-28 text-white md:pb-0">
         <div className={`${container} py-14`}>
-          <ul className="flex flex-wrap items-center gap-x-10 gap-y-4" aria-label="Organizan">
-            {organizers.map((org) => (
-              <li key={org.short}>
-                <OrganizerLogo org={org} size="md" />
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 grid grid-cols-1 gap-8 text-sm md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 text-sm md:grid-cols-3">
             <div>
               <h2 className="font-bold text-white">Contacto</h2>
               <a
@@ -630,14 +609,14 @@ export default function InfanciasPage() {
       </footer>
 
       <MobileStickyCta />
-    </>
+    </div>
   )
 }
 
 function PersonLink({ person }: { person: { name: string; id?: string } }) {
   if (!person.id) return <>{person.name}</>
   return (
-    <a href={`#${person.id}`} className="underline decoration-navy/20 underline-offset-2 hover:decoration-purple">
+    <a href={`#${person.id}`} className="underline decoration-ink/20 underline-offset-2 hover:decoration-graphite">
       {person.name}
     </a>
   )

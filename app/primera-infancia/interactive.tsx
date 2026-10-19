@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import { CalendarPlus, ChevronDown, Menu, X } from 'lucide-react'
 import {
   EVENT,
+  FORM_URL,
   SITE_URL,
   blockAnchors,
   faqs,
@@ -34,8 +35,10 @@ export function EventHeader() {
               </a>
             ))}
             <a
-              href="#inscripcion"
-              className="ml-2 rounded-md bg-sun px-4 py-2 text-sm font-bold text-ink transition-colors hover:bg-sun-dark"
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-mist"
             >
               Inscribite
             </a>
@@ -66,9 +69,11 @@ export function EventHeader() {
               </a>
             ))}
             <a
-              href="#inscripcion"
+              href={FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-md bg-sun px-3 py-2.5 text-center text-sm font-bold text-ink"
+              className="mt-2 rounded-full bg-white px-3 py-2.5 text-center text-sm font-semibold text-ink"
             >
               Inscribite
             </a>
@@ -102,9 +107,11 @@ export function MobileStickyCta() {
       aria-hidden={hidden}
     >
       <a
-        href="#inscripcion"
+        href={FORM_URL}
+        target="_blank"
+        rel="noopener noreferrer"
         tabIndex={hidden ? -1 : 0}
-        className="block rounded-lg bg-ink py-3 text-center font-bold text-white"
+        className="block rounded-full bg-ink py-3 text-center font-semibold text-white"
       >
         Inscribite
       </a>
@@ -192,7 +199,7 @@ export function AddToCalendar() {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-haspopup="menu"
-        className="inline-flex items-center gap-2 rounded-lg border border-ink/20 bg-white px-5 py-3 text-sm font-bold text-ink transition-colors hover:border-ink/40"
+        className="inline-flex items-center gap-2 rounded-full border border-ink/30 bg-white px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink/40"
       >
         <CalendarPlus className="h-4 w-4" />
         Agregar a mi calendario
@@ -280,7 +287,7 @@ export function SpeakersGrid() {
               <span
                 aria-hidden
                 className={`flex h-16 w-16 shrink-0 items-center justify-center rounded-lg text-lg font-bold ${
-                  s.institutional ? 'bg-ink/5 text-ink/60' : 'bg-stone/40 text-ink'
+                  s.institutional ? 'bg-ink/5 text-ink/60' : 'bg-lilac/40 text-ink'
                 }`}
               >
                 {initials(s.name)}
@@ -300,7 +307,7 @@ export function SpeakersGrid() {
                   </a>
                 ))}
                 {s.coordinates && (
-                  <span className="rounded-full bg-sun/40 px-2 py-0.5 text-xs font-semibold text-ink">
+                  <span className="rounded-full bg-teal/40 px-2 py-0.5 text-xs font-semibold text-ink">
                     Coordina
                   </span>
                 )}

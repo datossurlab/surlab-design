@@ -8,41 +8,9 @@ import {
   blockAnchors,
   faqs,
   navItems,
-  organizers,
   speakers,
   type Block,
 } from './data'
-
-export function OrganizerLogo({
-  org,
-  tone = 'light',
-  size = 'md',
-}: {
-  org: (typeof organizers)[number]
-  tone?: 'light' | 'dark'
-  size?: 'sm' | 'md' | 'lg'
-}) {
-  const text = tone === 'light' ? 'text-white' : 'text-navy'
-  const box = { sm: 'h-7 w-7 text-[10px]', md: 'h-10 w-10 text-xs', lg: 'h-16 w-16 text-sm' }[size]
-  const label = { sm: 'text-xs', md: 'text-sm', lg: 'text-lg' }[size]
-  return (
-    <span className={`flex items-center gap-2 ${text}`}>
-      {org.logo ? (
-        <img src={org.logo} alt="" className={`${box} object-contain`} />
-      ) : (
-        <span
-          aria-hidden
-          className={`${box} flex shrink-0 items-center justify-center rounded-full font-bold ${
-            tone === 'light' ? 'bg-white/15' : 'bg-navy/10'
-          }`}
-        >
-          {org.mark}
-        </span>
-      )}
-      <span className={`${label} font-semibold leading-tight whitespace-nowrap`}>{org.short}</span>
-    </span>
-  )
-}
 
 export function EventHeader() {
   const [open, setOpen] = useState(false)
@@ -51,10 +19,8 @@ export function EventHeader() {
     <header className="fixed inset-x-0 top-0 z-50 bg-[#00143f]/95 shadow-lg shadow-black/10 backdrop-blur">
       <nav aria-label="Secciones de la jornada" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
-          <a href="#inicio" className="flex items-center gap-3 sm:gap-4" aria-label="Ir al inicio">
-            {organizers.map((org) => (
-              <OrganizerLogo key={org.short} org={org} size="sm" />
-            ))}
+          <a href="#inicio" className="text-sm font-bold tracking-tight text-white sm:text-base">
+            La primera infancia en debate
           </a>
 
           <div className="hidden items-center gap-1 lg:flex">

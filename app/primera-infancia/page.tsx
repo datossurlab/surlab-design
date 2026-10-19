@@ -17,6 +17,7 @@ import {
 import {
   CONTACT_EMAIL,
   EVENT,
+  FORM_EMBED_URL,
   FORM_URL,
   MAP_EMBED_URL,
   MAP_LINK_URL,
@@ -34,7 +35,6 @@ import {
   EventHeader,
   Faq,
   MobileStickyCta,
-  OrganizerLogo,
   SpeakersGrid,
 } from './interactive'
 
@@ -154,14 +154,6 @@ export default function InfanciasPage() {
             }}
           />
           <div className={`${container} relative`}>
-            <ul className="mb-10 flex flex-wrap items-center gap-x-8 gap-y-4" aria-label="Organizan">
-              {organizers.map((org) => (
-                <li key={org.short}>
-                  <OrganizerLogo org={org} size="md" />
-                </li>
-              ))}
-            </ul>
-
             <p className="text-sm font-bold tracking-[0.14em] text-mint uppercase">
               Primera jornada · Rumbo a una Agenda Nacional de Primera Infancia 2027
             </p>
@@ -227,25 +219,28 @@ export default function InfanciasPage() {
         </section>
 
         {/* 3 · Organizan */}
-        <section id="organizan" aria-labelledby="organizan-titulo" className="scroll-mt-20 bg-white py-16">
+        <section id="organizan" aria-labelledby="organizan-titulo" className="scroll-mt-20 bg-cream py-16">
           <div className={container}>
             <h2 id="organizan-titulo" className={h2}>
               Organizan
             </h2>
             <ul className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
               {organizers.map((org) => (
-                <li key={org.short} className="flex flex-col gap-4 rounded-2xl border border-navy/10 bg-cream p-6">
+                <li key={org.short} className="flex flex-col gap-5 rounded-2xl border border-navy/10 bg-white p-6">
                   {org.href ? (
                     <a
                       href={org.href}
                       target={org.href.startsWith('http') ? '_blank' : undefined}
                       rel={org.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="w-fit"
+                      className="flex h-24 items-center"
+                      aria-label={org.name}
                     >
-                      <OrganizerLogo org={org} tone="dark" size="lg" />
+                      <img src={org.logo} alt={`Logo de ${org.name}`} className={`${org.logoClass} w-auto max-w-full object-contain object-left`} />
                     </a>
                   ) : (
-                    <OrganizerLogo org={org} tone="dark" size="lg" />
+                    <span className="flex h-24 items-center">
+                      <img src={org.logo} alt={`Logo de ${org.name}`} className={`${org.logoClass} w-auto max-w-full object-contain object-left`} />
+                    </span>
                   )}
                   <div>
                     <h3 className="font-bold text-navy">{org.name}</h3>
@@ -533,11 +528,11 @@ export default function InfanciasPage() {
 
             {FORM_URL ? (
               <>
-                <div className="mt-10 overflow-hidden rounded-2xl bg-white">
+                <div className="mx-auto mt-10 max-w-3xl overflow-hidden rounded-2xl bg-white shadow-[5px_5px_56px_0_rgba(0,0,0,0.25)]">
                   <iframe
-                    src={FORM_URL}
+                    src={FORM_EMBED_URL}
                     title="Formulario de inscripción a la jornada"
-                    className="h-[1400px] w-full sm:h-[1200px]"
+                    className="h-[1100px] w-full sm:h-[900px]"
                     style={{ border: 0 }}
                   />
                 </div>
@@ -586,15 +581,7 @@ export default function InfanciasPage() {
       {/* Pie */}
       <footer className="bg-[#00143f] pb-28 text-white md:pb-0">
         <div className={`${container} py-14`}>
-          <ul className="flex flex-wrap items-center gap-x-10 gap-y-4" aria-label="Organizan">
-            {organizers.map((org) => (
-              <li key={org.short}>
-                <OrganizerLogo org={org} size="md" />
-              </li>
-            ))}
-          </ul>
-
-          <div className="mt-10 grid grid-cols-1 gap-8 text-sm md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 text-sm md:grid-cols-3">
             <div>
               <h2 className="font-bold text-white">Contacto</h2>
               <a

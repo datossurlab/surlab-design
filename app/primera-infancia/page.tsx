@@ -144,7 +144,7 @@ export default function InfanciasPage() {
         <section
           id="inicio"
           className="relative scroll-mt-20 overflow-hidden pt-28 pb-20 text-ink sm:pt-36 sm:pb-28"
-          style={{ background: 'linear-gradient(115deg, #9c9fcf 0%, #a4a8d3 38%, #c5d6df 72%, #8da7f0 100%)' }}
+          style={{ background: 'linear-gradient(115deg, #d8efd3 0%, #95d2b3 55%, #55ad9b 100%)' }}
         >
           <div className={`${container} relative`}>
             <p className="text-sm font-semibold tracking-[0.14em] text-ink/70 uppercase">

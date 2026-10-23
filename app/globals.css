@@ -4,16 +4,16 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Paleta de la landing /primera-infancia: negro, grises y pasteles fríos (no afecta al resto del sitio) */
+/* Paleta de la landing /primera-infancia: negro y verdes menta (no afecta al resto del sitio) */
 @theme {
   --color-ink: #151515;
   --color-ink-soft: #2e2e33;
-  --color-graphite: #474a7a;
-  --color-lilac: #9c9fcf;
-  --color-peri: #8da7f0;
-  --color-teal: #7cbfce;
-  --color-mist: #eaeaea;
-  --color-paper: #f2f2f4;
+  --color-graphite: #2d6b5e;
+  --color-lilac: #55ad9b;
+  --color-peri: #55ad9b;
+  --color-teal: #95d2b3;
+  --color-mist: #f1f8f2;
+  --color-paper: #d8efd3;
 }
 
 @theme inline {

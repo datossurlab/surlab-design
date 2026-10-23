@@ -146,9 +146,7 @@ export const program: ProgramRow[] = [
     people: [
       { name: 'María Elena Úbeda', id: 'maria-elena-ubeda' },
       { name: 'Christian Asinelli', id: 'christian-asinelli' },
-      { name: 'representación del BID', id: 'representacion-bid' },
       { name: 'Mercedes Mayol Lassalle', id: 'mercedes-mayol-lassalle' },
-      { name: 'autoridades de la Facultad de Derecho', id: 'representacion-facultad' },
     ],
     coordinator: { name: 'Adrián Rozengardt', id: 'adrian-rozengardt' },
   },
@@ -235,8 +233,6 @@ export const speakers: Speaker[] = [
   { id: 'georgina-tavella', name: 'Georgina Tavella', role: 'Defensoría de los Derechos de las Niñas, Niños y Adolescentes de Córdoba', blocks: ['Panel 1'] },
   { id: 'maria-elena-ubeda', name: 'María Elena Úbeda', role: 'UNICEF', blocks: ['Apertura'] },
   { id: 'mercedes-gabriela-valenzuela', name: 'Mercedes Gabriela Valenzuela', role: 'Senadora nacional por Corrientes, presidenta de la Comisión de Educación del Senado', blocks: ['Panel 3'] },
-  { id: 'representacion-bid', name: 'Representación del BID', role: 'Banco Interamericano de Desarrollo', blocks: ['Apertura'], institutional: true },
-  { id: 'representacion-facultad', name: 'Representación de la Facultad', role: 'Facultad de Derecho, UBA', blocks: ['Apertura'], institutional: true },
   { id: 'intendencia-mercedes', name: 'Intendencia de Mercedes', role: '', blocks: ['Panel 2'], institutional: true },
 ]
 

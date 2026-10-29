@@ -131,6 +131,7 @@ export type ProgramRow = {
   id?: string
   label?: string
   title: string
+  subtitle?: string
   people?: ProgramPerson[]
   coordinator?: ProgramPerson
   extra?: string
@@ -143,10 +144,12 @@ export const program: ProgramRow[] = [
     id: 'apertura',
     label: 'Apertura',
     title: 'La primera infancia en la agenda pública',
+    subtitle: 'Derechos, desarrollo y compromisos para el futuro',
     people: [
       { name: 'María Elena Úbeda', id: 'maria-elena-ubeda' },
       { name: 'Christian Asinelli', id: 'christian-asinelli' },
       { name: 'Mercedes Mayol Lassalle', id: 'mercedes-mayol-lassalle' },
+      { name: 'Facultad de Derecho de la Universidad de Buenos Aires', id: 'facultad-derecho-uba' },
     ],
     coordinator: { name: 'Adrián Rozengardt', id: 'adrian-rozengardt' },
   },
@@ -155,6 +158,7 @@ export const program: ProgramRow[] = [
     id: 'panel-1',
     label: 'Panel 1',
     title: '¿Dónde estamos?',
+    subtitle: 'La primera infancia en Argentina: condiciones de vida, desigualdades, derechos y transformaciones demográficas',
     people: [
       { name: 'Carolina Aulicino', id: 'carolina-aulicino' },
       { name: 'Roxana Mazzola', id: 'roxana-mazzola' },
@@ -168,12 +172,14 @@ export const program: ProgramRow[] = [
     time: '17:30',
     id: 'panel-2',
     label: 'Panel 2',
-    title: 'Educar y cuidar desde el nacimiento',
+    title: '¿Qué estamos haciendo y qué debemos hacer?',
+    subtitle: 'Educar y cuidar desde el nacimiento: derechos, políticas y territorios',
     people: [
       { name: 'Mercedes Mayol Lassalle', id: 'mercedes-mayol-lassalle' },
       { name: 'Diego Álvarez', id: 'diego-alvarez' },
       { name: 'Ramiro Aranda', id: 'ramiro-aranda' },
-      { name: 'Intendencia de Mercedes', id: 'intendencia-mercedes' },
+      { name: 'Juan Ignacio Ustarroz', id: 'juan-ignacio-ustarroz' },
+      { name: 'María Carolina Moises', id: 'maria-carolina-moises' },
     ],
     coordinator: { name: 'Javier Rodríguez', id: 'javier-rodriguez' },
   },
@@ -181,12 +187,13 @@ export const program: ProgramRow[] = [
     time: '18:30',
     id: 'panel-3',
     label: 'Panel 3',
-    title: 'Las transformaciones de nuestro tiempo',
+    title: '¿Cómo interpelan las transformaciones de nuestro tiempo a la primera infancia?',
+    subtitle: 'Tecnologías, ambiente, vínculos, cuidados y justicia intergeneracional',
     people: [
       { name: 'Daniel Brailovsky', id: 'daniel-brailovsky' },
       { name: 'Fernando Salvatierra', id: 'fernando-salvatierra' },
       { name: 'Raúl Mercer', id: 'raul-mercer' },
-      { name: 'Mercedes Gabriela Valenzuela', id: 'mercedes-gabriela-valenzuela' },
+      { name: 'Daniel Esponda', id: 'daniel-esponda' },
     ],
     coordinator: { name: 'Paula Lorenzi', id: 'paula-lorenzi' },
   },
@@ -195,6 +202,7 @@ export const program: ProgramRow[] = [
     id: 'cierre',
     label: 'Cierre',
     title: '¿Con qué compromisos queremos llegar a 2027?',
+    subtitle: 'Hacia una Agenda Nacional de Primera Infancia',
     coordinator: { name: 'Adrián Rozengardt', id: 'adrian-rozengardt' },
     extra: 'Cierre musical',
   },
@@ -224,16 +232,18 @@ export const speakers: Speaker[] = [
   { id: 'gabriela-fairstein', name: 'Gabriela Fairstein', role: 'Facultad de Derecho, UBA', blocks: ['Panel 1'], coordinates: true },
   { id: 'paula-lorenzi', name: 'Paula Lorenzi', role: '', blocks: ['Panel 3'], coordinates: true },
   { id: 'mercedes-mayol-lassalle', name: 'Mercedes Mayol Lassalle', role: 'OMEP', blocks: ['Apertura', 'Panel 2'] },
-  { id: 'roxana-mazzola', name: 'Roxana Mazzola', role: 'FLACSO y UBA', blocks: ['Panel 1'] },
+  { id: 'roxana-mazzola', name: 'Roxana Mazzola', role: 'FLACSO-UBA', blocks: ['Panel 1'] },
   { id: 'raul-mercer', name: 'Raúl Mercer', role: 'FLACSO', blocks: ['Panel 3'] },
   { id: 'javier-moro', name: 'Javier Moro', role: 'Defensoría de los Derechos de las Niñas, Niños y Adolescentes de la Nación', blocks: ['Panel 1'] },
-  { id: 'javier-rodriguez', name: 'Javier Rodríguez', role: 'Fundación Arcor', blocks: ['Panel 2'], coordinates: true },
+  { id: 'javier-rodriguez', name: 'Javier Rodríguez', role: 'Consultor en primera infancia', blocks: ['Panel 2'], coordinates: true },
   { id: 'adrian-rozengardt', name: 'Adrián Rozengardt', role: 'SurLab, Laboratorio de Innovación Política', blocks: ['Apertura', 'Cierre'], coordinates: true },
   { id: 'fernando-salvatierra', name: 'Fernando Salvatierra', role: 'IIPE UNESCO', blocks: ['Panel 3'] },
   { id: 'georgina-tavella', name: 'Georgina Tavella', role: 'Defensoría de los Derechos de las Niñas, Niños y Adolescentes de Córdoba', blocks: ['Panel 1'] },
   { id: 'maria-elena-ubeda', name: 'María Elena Úbeda', role: 'UNICEF', blocks: ['Apertura'] },
-  { id: 'mercedes-gabriela-valenzuela', name: 'Mercedes Gabriela Valenzuela', role: 'Senadora nacional por Corrientes, presidenta de la Comisión de Educación del Senado', blocks: ['Panel 3'] },
-  { id: 'intendencia-mercedes', name: 'Intendencia de Mercedes', role: '', blocks: ['Panel 2'], institutional: true },
+  { id: 'maria-carolina-moises', name: 'María Carolina Moises', role: 'Senadora Nacional', blocks: ['Panel 2'] },
+  { id: 'daniel-esponda', name: 'Daniel Esponda', role: 'Ex Ministro de Educación de Honduras', blocks: ['Panel 3'] },
+  { id: 'juan-ignacio-ustarroz', name: 'Juan Ignacio Ustarroz', role: 'Intendente de Mercedes, Provincia de Buenos Aires', blocks: ['Panel 2'] },
+  { id: 'facultad-derecho-uba', name: 'Facultad de Derecho de la Universidad de Buenos Aires', role: '', blocks: ['Apertura'], institutional: true },
 ]
 
 export const blockAnchors: Record<Block, string> = {

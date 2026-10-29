@@ -368,6 +368,7 @@ export default function InfanciasPage() {
                         <span className="text-xs font-bold tracking-wider text-graphite uppercase">{row.label}</span>
                       )}
                       <h3 className={isBreak ? 'text-base' : 'text-lg leading-snug font-bold text-ink'}>{row.title}</h3>
+                      {row.subtitle && <p className="mt-1 text-sm leading-snug text-foreground/70 italic">{row.subtitle}</p>}
                     </div>
                     {!isBreak && (
                       <p className="text-sm leading-relaxed text-foreground/80">
